@@ -4,15 +4,37 @@ using UnityEngine;
 
 public class Script_Enemy_Wave_Spawner : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //[System Serializable]
+
+    public class Wave
+    {
+        public string name;
+
+        public Transform enemy;
+
+        public int count;
+
+        public float rate;
+    }
+    
+    public Wave[] waves;
+
+    private int nextWave = 0;
+
+    public float timeBetweenWaves = 15f;
+
+    public float waveCountdown;
+
     void Start()
     {
-        
+        waveCountdown = timeBetweenWaves;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (waveCountdown <= 0)
+        {
+
+        }
     }
 }
