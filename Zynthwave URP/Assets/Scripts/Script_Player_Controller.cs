@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Script_Player_Controller : MonoBehaviour
 {
@@ -9,6 +10,18 @@ public class Script_Player_Controller : MonoBehaviour
     public float maxSpeed;
     public float slowDownSpeed;
     public float stopSpeed;
+    public InputAction leftStick;
+    public InputAction rightStick;
+
+    //set up controller
+    void OnEnable() {
+        leftStick.Enable();
+        rightStick.Enable();
+    }
+    void OnDisable() {
+        leftStick.Disable();
+        rightStick.Disable();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -20,10 +33,11 @@ public class Script_Player_Controller : MonoBehaviour
     void FixedUpdate()
     {
         CheckInput();
+        GamepadInputs();
     }
 
     void CheckInput() {
-        if (Input.GetKey(KeyCode.W)) {
+        /*if (Input.GetKey(KeyCode.W)) {
             Move("up");
         }
         if (Input.GetKey(KeyCode.S)) {
@@ -38,7 +52,7 @@ public class Script_Player_Controller : MonoBehaviour
         //Check if user is not using any movement inputs
         if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S)) {
             SlowDown();
-        }
+        }*/
     }
 
     void Move(string input) {
@@ -109,5 +123,14 @@ public class Script_Player_Controller : MonoBehaviour
                 rb.AddForce(new Vector3(0,0,slowDownSpeed));
             }
         }
+    }
+    void GamepadInputs() {
+        Vector2 direction = leftStick.ReadValue<Vector2>();
+        Vector2 lookDirection = rightStick.ReadValue<Vector2>();
+        
+        rb.velocity = new Vector3(direction.x*speed, 0, direction.y*speed);
+        Vector3 lookVector = new Vector3(lookDirection.x, 0, lookDirection.y);
+        transform.rotation = Quaternion.LookRotation(lookVector);
+        Debug.Log(lookDirection);
     }
 }
