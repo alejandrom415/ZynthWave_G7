@@ -14,6 +14,14 @@ public class Script_Player_Controller : MonoBehaviour
     public InputAction rightStick;
     public ParticleSystem bullets;
 
+    public int maxHearts = 4;
+    public int minHearts = 0;
+    public int hearts { get { return currentHearts; } }
+    int currentHearts;
+    public float timeInvincible = 2.0f;
+    bool isInvincible;
+    float invincibleTimer;
+
     //set up controller
     void OnEnable() {
         leftStick.Enable();
@@ -29,7 +37,43 @@ public class Script_Player_Controller : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         bullets = bullets.GetComponent<ParticleSystem>();
+
+        currentHearts = maxHearts;
     }
+
+    void Update()
+    {
+        if (isInvincible)
+        {
+            invincibleTimer -= Time.deltaTime;
+            if (invincibleTimer < 0)
+                isInvincible = false;
+                Debug.Log ("NOT INVINCIBLE");
+        }
+    }
+
+    public void ChangeHearts(int amount)
+    {
+        if (amount < 0)
+        {
+            if (isInvincible)
+                return;
+
+            isInvincible = true;
+            invincibleTimer = timeInvincible;
+
+            Debug.Log ("INVINCIBLE");
+        }
+
+        if (hearts == minHearts)
+        {
+            Debug.Log ("GAME OVER");
+        }
+
+        currentHearts = Mathf.Clamp(currentHearts + amount, 0, maxHearts);
+        //UIHearts.instance.SetValue(currentHearts / (float)maxHearts);
+    }
+
 
     // Update is called once per frame
     void FixedUpdate()
