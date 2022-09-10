@@ -1,28 +1,112 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Script_Player_Controller : MonoBehaviour
 {
     Rigidbody rb;
     public float speed;
-    public float maxSpeed;
-    public float slowDownSpeed;
-    public float stopSpeed;
+    //public float maxSpeed;
+    //public float slowDownSpeed;
+    //public float stopSpeed;
+    public InputAction leftStick;
+    public InputAction rightStick;
+    public ParticleSystem bullets;
+
+    public int maxHearts = 4;
+    public int minHearts = 0;
+    public int hearts { get { return currentHearts; } }
+    int currentHearts;
+    public float timeInvincible = 2.0f;
+    bool isInvincible;
+    float invincibleTimer;
+
+    //set up controller
+    void OnEnable() {
+        leftStick.Enable();
+        rightStick.Enable();
+    }
+    void OnDisable() {
+        leftStick.Disable();
+        rightStick.Disable();
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        bullets = bullets.GetComponent<ParticleSystem>();
+
+        currentHearts = maxHearts;
     }
+
+    void Update()
+    {
+        if (isInvincible)
+        {
+            invincibleTimer -= Time.deltaTime;
+            if (invincibleTimer < 0)
+                isInvincible = false;
+                Debug.Log ("NOT INVINCIBLE");
+        }
+    }
+
+    public void ChangeHearts(int amount)
+    {
+        if (amount < 0)
+        {
+            if (isInvincible)
+                return;
+
+            isInvincible = true;
+            invincibleTimer = timeInvincible;
+
+            Debug.Log ("INVINCIBLE");
+        }
+
+        if (hearts == minHearts)
+        {
+            Debug.Log ("GAME OVER");
+        }
+
+        currentHearts = Mathf.Clamp(currentHearts + amount, 0, maxHearts);
+        //UIHearts.instance.SetValue(currentHearts / (float)maxHearts);
+    }
+
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        CheckInput();
+        //CheckInput();
+        GamepadInputs();
     }
 
-    void CheckInput() {
+    void GamepadInputs() {
+        Vector2 direction = leftStick.ReadValue<Vector2>();
+        Vector2 lookDirection = rightStick.ReadValue<Vector2>();
+        
+        rb.velocity = new Vector3(direction.x*speed, 0, direction.y*speed);
+        Vector3 lookVector = new Vector3(lookDirection.x, 0, lookDirection.y);
+        transform.rotation = Quaternion.LookRotation(lookVector);
+        if (lookDirection.x > 0.8 || lookDirection.x < -0.8 || lookDirection.y > 0.8 || lookDirection.y < -0.8) {
+            Shoot(true);
+        } else {
+            Shoot(false);
+        }
+        //Debug.Log(lookDirection);
+    }
+
+    void Shoot(bool isShooting) {
+        ParticleSystem.EmissionModule em = bullets.GetComponent<ParticleSystem>().emission;
+        if (isShooting) {
+            em.enabled = true;
+            return;
+        }
+        em.enabled = false;
+    }
+
+    /*void CheckInput() {
         if (Input.GetKey(KeyCode.W)) {
             Move("up");
         }
@@ -109,5 +193,5 @@ public class Script_Player_Controller : MonoBehaviour
                 rb.AddForce(new Vector3(0,0,slowDownSpeed));
             }
         }
-    }
+    }*/
 }
