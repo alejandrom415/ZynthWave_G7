@@ -21,7 +21,7 @@ public class Script_EnemyHit : MonoBehaviour
         Debug.Log("Ouch!");
         healthPoints--;
         if (healthPoints <= 0) {
-            gameObject.SetActive(false);
+            Destroy(gameObject);
         }
     }
 }
