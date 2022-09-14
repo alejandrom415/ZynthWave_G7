@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637987660490000000
+      ticks: 637987672170000000
     m_Hash: 1285894667
   m_LockFileStatus:
     m_FilePath: /Users/alejandromorales/Desktop/ZynthWave_G7/Zynthwave URP/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637987660490000000
+      ticks: 637987672170000000
     m_Hash: 2928928177
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
