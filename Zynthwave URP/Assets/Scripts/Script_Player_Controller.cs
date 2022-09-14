@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Script_Player_Controller : MonoBehaviour
 {
@@ -13,7 +15,7 @@ public class Script_Player_Controller : MonoBehaviour
     public InputAction leftStick;
     public InputAction rightStick;
     public ParticleSystem bullets;
-
+    public TMP_Text gameOverText;
     public int maxHearts = 4;
     public int minHearts = 0;
     public int hearts { get { return currentHearts; } }
@@ -39,6 +41,8 @@ public class Script_Player_Controller : MonoBehaviour
         bullets = bullets.GetComponent<ParticleSystem>();
 
         currentHearts = maxHearts;
+
+        gameOverText.text = "";
     }
 
     void Update()
@@ -53,7 +57,7 @@ public class Script_Player_Controller : MonoBehaviour
 
         if (Input.GetKey("escape"))
         {
-            Application.Quit();
+            SceneManager.LoadScene("MainMenu");
         }
     }
 
@@ -72,7 +76,7 @@ public class Script_Player_Controller : MonoBehaviour
 
         if (hearts == minHearts)
         {
-            Debug.Log ("GAME OVER");
+            GameOver();
         }
 
         currentHearts = Mathf.Clamp(currentHearts + amount, 0, maxHearts);
@@ -133,6 +137,19 @@ public class Script_Player_Controller : MonoBehaviour
 
             Destroy(collider.gameObject);
         }
+    }
+
+    void GameOver()
+    {
+        gameOverText.text = "YOU LOSE! - ESC TO QUIT TO MENU";
+        
+        Destroy(gameObject.GetComponent<Collider>());
+        
+        isInvincible = true;
+        
+        invincibleTimer = 9999;
+
+        speed = 0;
     }
 
     /*void CheckInput() {
