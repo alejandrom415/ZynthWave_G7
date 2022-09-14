@@ -50,6 +50,11 @@ public class Script_Player_Controller : MonoBehaviour
                 isInvincible = false;
                 Debug.Log ("NOT INVINCIBLE");
         }
+
+        if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
     }
 
     public void ChangeHearts(int amount)
@@ -104,6 +109,30 @@ public class Script_Player_Controller : MonoBehaviour
             return;
         }
         em.enabled = false;
+    }
+
+    void OnTriggerEnter(Collider collider)
+    {
+        if (collider.tag == "Hearts")
+        {
+            if (hearts < maxHearts)
+            {
+                currentHearts = currentHearts + 1;
+
+                Debug.Log("HEARTS COLLECTED");
+
+                Destroy(collider.gameObject);
+            }
+        }
+
+        if (collider.tag == "Speed")
+        {
+            speed = speed * 2;
+
+            Debug.Log("SPEED BOOST");
+
+            Destroy(collider.gameObject);
+        }
     }
 
     /*void CheckInput() {

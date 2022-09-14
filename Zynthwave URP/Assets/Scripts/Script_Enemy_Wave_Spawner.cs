@@ -70,6 +70,8 @@ public class Script_Enemy_Wave_Spawner : MonoBehaviour
         {
             waveCountdown -= Time.deltaTime;
         }
+
+        transform.Rotate (new Vector3 (0,15,0) * Time.deltaTime);
     }
 
     void WaveCompleted()

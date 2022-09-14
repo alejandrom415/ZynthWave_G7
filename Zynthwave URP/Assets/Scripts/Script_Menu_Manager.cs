@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class MenuManager : MonoBehaviour
+public class Script_Menu_Manager : MonoBehaviour
 {
     
     public GameObject mainMenu, settingsMenu, helpMenu, creditsMenu;
@@ -75,7 +75,7 @@ public class MenuManager : MonoBehaviour
 
     public void QuitGame()
     {
-        //Application.Quit();
+        Application.Quit();
         Debug.Log("I quit the game.");
     }
    
