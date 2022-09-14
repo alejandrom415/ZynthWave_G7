@@ -12,7 +12,7 @@ public class Script_Enemy_Wave_Spawner : MonoBehaviour
     {
         public string name;
 
-        public Transform enemy;
+        public GameObject enemy;
 
         public int count;
 
@@ -130,7 +130,7 @@ public class Script_Enemy_Wave_Spawner : MonoBehaviour
         yield break;
     }
 
-    void SpawnEnemy(Transform _enemy)
+    void SpawnEnemy(GameObject _enemy)
     {
         Debug.Log ("SPAWNING ENEMY: " + _enemy.name);
 
