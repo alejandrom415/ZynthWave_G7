@@ -32,4 +32,14 @@ public class Script_Enemy_Controller : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    void OnCollisionEnter(Collision other)
+    {
+        Script_Player_Controller player = other.gameObject.GetComponent<Script_Player_Controller>();
+
+        if (player != null)
+        {
+            player.ChangeHearts(-1);
+        }
+    }
 }

@@ -19,7 +19,7 @@ public class Script_Player_Controller : MonoBehaviour
     public int maxHearts = 4;
     public int minHearts = 0;
     public int hearts { get { return currentHearts; } }
-    int currentHearts;
+    public int currentHearts;
     public float timeInvincible = 2.0f;
     bool isInvincible;
     float invincibleTimer;
