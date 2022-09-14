@@ -372,7 +372,6 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Scripts/MenuManager.cs"
 "Assets/Scripts/Script_Camera_Controller.cs"
-"Assets/Scripts/Script_EnemyHit.cs"
 "Assets/Scripts/Script_Enemy_Controller.cs"
 "Assets/Scripts/Script_Enemy_Wave_Spawner.cs"
 "Assets/Scripts/Script_Player_Controller.cs"
