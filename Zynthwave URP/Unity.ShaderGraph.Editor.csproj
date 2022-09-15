@@ -676,8 +676,8 @@
      <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.7\Editor\Drawing\Colors\UserColors.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.7\Editor\Data\Legacy\AbstractMaterialNode0.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.7\Editor\Drawing\Controls\EnumControl.cs" />
-     <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.7\Editor\Drawing\Views\GraphSubWindow.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.7\Editor\Data\Nodes\Input\Basic\SliderNode.cs" />
+     <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.7\Editor\Drawing\Views\GraphSubWindow.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.7\Editor\Data\Legacy\StickyNoteData0.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.7\Editor\Data\Graphs\Texture2DInputMaterialSlot.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.7\Editor\Data\Nodes\Utility\Logic\AndNode.cs" />

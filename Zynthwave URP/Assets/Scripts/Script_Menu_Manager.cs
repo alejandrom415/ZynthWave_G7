@@ -11,12 +11,27 @@ public class Script_Menu_Manager : MonoBehaviour
     public GameObject mainMenu, settingsMenu, helpMenu, creditsMenu;
     public GameObject playBtn, settingsBtn, settingsBackBtn, helpBtn, helpBackBtn, creditsBtn, creditsBackBtn, quitBtn;
 
+    public void MainMenuOn()
+    {
+        mainMenu.SetActive(true);
+    }
+
+    public void MainMenuOff()
+    {
+        mainMenu.SetActive(false);
+    }
+
+    public void NoSelection()
+    {
+        EventSystem.current.SetSelectedGameObject(null);
+    }
+
     void Start()
     {
         //Deselecting all buttons as protocol
-        EventSystem.current.SetSelectedGameObject(null);
+        NoSelection();
 
-        //Making the Start Button the first selected button
+        //Making the Play Button the first selected button
         EventSystem.current.SetSelectedGameObject(playBtn);
     }
 
@@ -27,49 +42,49 @@ public class Script_Menu_Manager : MonoBehaviour
 
     public void OpenSettings()
     {
-        mainMenu.SetActive(false);
+        MainMenuOff();
         settingsMenu.SetActive(true);
-        EventSystem.current.SetSelectedGameObject(null);
+        NoSelection();
         EventSystem.current.SetSelectedGameObject(settingsBackBtn);
     }
 
     public void CloseSettings()
     {
-        mainMenu.SetActive(true);
+        MainMenuOn();
         settingsMenu.SetActive(false);
-        EventSystem.current.SetSelectedGameObject(null);
+        NoSelection();
         EventSystem.current.SetSelectedGameObject(settingsBtn);
     }
 
     public void OpenHelp()
     {
-        mainMenu.SetActive(false);
+        MainMenuOff();
         helpMenu.SetActive(true);
-        EventSystem.current.SetSelectedGameObject(null);
+        NoSelection();
         EventSystem.current.SetSelectedGameObject(helpBackBtn);
     }
 
     public void CloseHelp()
     {
-        mainMenu.SetActive(true);
+        MainMenuOn();
         helpMenu.SetActive(false);
-        EventSystem.current.SetSelectedGameObject(null);
+        NoSelection();
         EventSystem.current.SetSelectedGameObject(helpBtn);
     }
 
     public void OpenCredits()
     {
-        mainMenu.SetActive(false);
+        MainMenuOff();
         creditsMenu.SetActive(true);
-        EventSystem.current.SetSelectedGameObject(null);
+        NoSelection();
         EventSystem.current.SetSelectedGameObject(creditsBackBtn);
     }
 
     public void CloseCredits()
     {
-        mainMenu.SetActive(true);
+        MainMenuOn();
         creditsMenu.SetActive(false);
-        EventSystem.current.SetSelectedGameObject(null);
+        NoSelection();
         EventSystem.current.SetSelectedGameObject(creditsBtn);
     }
 
