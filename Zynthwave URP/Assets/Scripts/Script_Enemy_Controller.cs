@@ -7,10 +7,13 @@ public class Script_Enemy_Controller : MonoBehaviour
     public int healthPoints;
     GameObject player; 
     public float speed;
-    //Rigidbody rb;
+    public GameObject enemydeathparticlesPrefab;
+    Rigidbody rb;
 
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
+
         player = GameObject.Find("Player");
     }
 
@@ -18,6 +21,7 @@ public class Script_Enemy_Controller : MonoBehaviour
     void Update()
     {
         var step =  speed * Time.deltaTime; // calculate distance to move
+        
         transform.position = Vector3.MoveTowards(transform.position, player.transform.position, step);
     }
 
@@ -29,6 +33,8 @@ public class Script_Enemy_Controller : MonoBehaviour
         
         if (healthPoints <= 0) 
         {
+            Instantiate(enemydeathparticlesPrefab, rb.position + Vector3.up * 0.5f, Quaternion.identity);
+            
             Destroy(gameObject);
         }
     }

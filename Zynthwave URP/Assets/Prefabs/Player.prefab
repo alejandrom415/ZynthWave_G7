@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9c4f98f2fd274ad59a060c95b59caa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 12
+  speed: 5
   leftStick:
     m_Name: Left Stick
     m_Type: 0
@@ -216,6 +216,7 @@ MonoBehaviour:
   gameOverText: {fileID: 0}
   maxHearts: 4
   minHearts: 0
+  currentHearts: 0
   timeInvincible: 2
 --- !u!54 &67986669
 Rigidbody:
