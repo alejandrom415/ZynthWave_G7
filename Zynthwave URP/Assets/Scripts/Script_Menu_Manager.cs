@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class Script_Menu_Manager : MonoBehaviour
 {
     
-    public GameObject mainMenu, settingsMenu, helpMenu, creditsMenu;
+    public GameObject mainMenu, settingsMenu, helpMenu, creditsMenu, logoImg, whitePanel;
     public GameObject playBtn, settingsBtn, settingsBackBtn, helpBtn, helpBackBtn, creditsBtn, creditsBackBtn, quitBtn;
 
     public void MainMenuOn()
@@ -28,6 +28,8 @@ public class Script_Menu_Manager : MonoBehaviour
 
     void Start()
     {
+        LeanTween.alpha(logoImg.GetComponent<RectTransform>(), 1f, 3f).setDelay(0.5f);
+
         //Deselecting all buttons as protocol
         NoSelection();
 
@@ -35,10 +37,9 @@ public class Script_Menu_Manager : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(playBtn);
     }
 
-    public void StartGame()
-    {
-        SceneManager.LoadScene("Arcade");
-    }
+    public void StartGame() => LeanTween.alpha(whitePanel.GetComponent<RectTransform>(), 1f, 1f).setOnComplete(PlayClick);
+
+    void PlayClick() => SceneManager.LoadScene("Arcade");
 
     public void OpenSettings()
     {
