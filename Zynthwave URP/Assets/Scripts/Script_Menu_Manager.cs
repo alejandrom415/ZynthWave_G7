@@ -7,45 +7,29 @@ using UnityEngine.UI;
 
 public class Script_Menu_Manager : MonoBehaviour
 {
-    
-    public GameObject mainMenu, settingsMenu, helpMenu, creditsMenu, logoImg, whitePanel;
-    public GameObject playBtn, settingsBtn, settingsBackBtn, helpBtn, helpBackBtn, creditsBtn, creditsBackBtn, quitBtn;
+    public GameObject logoImg, whitePanel;                                                                                  // Background Elements
+    public GameObject mainMenu, settingsMenu, helpMenu, creditsMenu;                                                        // Menu Elements
+    public GameObject playBtn, settingsBtn, settingsBackBtn, helpBtn, helpBackBtn, creditsBtn, creditsBackBtn, quitBtn;     // Button Elements
 
-    public void MainMenuOn()
-    {
-        mainMenu.SetActive(true);
-    }
-
-    public void MainMenuOff()
-    {
-        mainMenu.SetActive(false);
-    }
-
-    public void NoSelection()
-    {
-        EventSystem.current.SetSelectedGameObject(null);
-    }
+    public void MainMenuOn() => mainMenu.SetActive(true);
+    public void MainMenuOff() => mainMenu.SetActive(false);
+    public void NoSelect() => EventSystem.current.SetSelectedGameObject(null);
 
     void Start()
     {
         LeanTween.alpha(logoImg.GetComponent<RectTransform>(), 1f, 3f).setDelay(0.5f);
-
-        //Deselecting all buttons as protocol
-        NoSelection();
-
-        //Making the Play Button the first selected button
+        NoSelect();
         EventSystem.current.SetSelectedGameObject(playBtn);
     }
 
-    public void StartGame() => LeanTween.alpha(whitePanel.GetComponent<RectTransform>(), 1f, 1f).setOnComplete(PlayClick);
-
-    void PlayClick() => SceneManager.LoadScene("Arcade");
+    public void StartGame() => LeanTween.alpha(whitePanel.GetComponent<RectTransform>(), 1f, 1f).setOnComplete(PlayClicked);
+    void PlayClicked() => SceneManager.LoadScene("Arcade");
 
     public void OpenSettings()
     {
         MainMenuOff();
         settingsMenu.SetActive(true);
-        NoSelection();
+        NoSelect();
         EventSystem.current.SetSelectedGameObject(settingsBackBtn);
     }
 
@@ -53,7 +37,7 @@ public class Script_Menu_Manager : MonoBehaviour
     {
         MainMenuOn();
         settingsMenu.SetActive(false);
-        NoSelection();
+        NoSelect();
         EventSystem.current.SetSelectedGameObject(settingsBtn);
     }
 
@@ -61,7 +45,7 @@ public class Script_Menu_Manager : MonoBehaviour
     {
         MainMenuOff();
         helpMenu.SetActive(true);
-        NoSelection();
+        NoSelect();
         EventSystem.current.SetSelectedGameObject(helpBackBtn);
     }
 
@@ -69,7 +53,7 @@ public class Script_Menu_Manager : MonoBehaviour
     {
         MainMenuOn();
         helpMenu.SetActive(false);
-        NoSelection();
+        NoSelect();
         EventSystem.current.SetSelectedGameObject(helpBtn);
     }
 
@@ -77,7 +61,7 @@ public class Script_Menu_Manager : MonoBehaviour
     {
         MainMenuOff();
         creditsMenu.SetActive(true);
-        NoSelection();
+        NoSelect();
         EventSystem.current.SetSelectedGameObject(creditsBackBtn);
     }
 
@@ -85,14 +69,13 @@ public class Script_Menu_Manager : MonoBehaviour
     {
         MainMenuOn();
         creditsMenu.SetActive(false);
-        NoSelection();
+        NoSelect();
         EventSystem.current.SetSelectedGameObject(creditsBtn);
     }
 
-    public void QuitGame()
-    {
-        Application.Quit();
-        Debug.Log("I quit the game.");
-    }
+    public void QuitGame() => Debug.Log("I quit the game.");
+    // {
+    //     Application.Quit();
+    // }
    
 }

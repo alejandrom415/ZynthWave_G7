@@ -528,12 +528,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4f32b9ea26c9f4438d9e9f2bed0c1cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  logoImg: {fileID: 1609966114}
+  whitePanel: {fileID: 796659609}
   mainMenu: {fileID: 1355418217}
   settingsMenu: {fileID: 1828994463}
   helpMenu: {fileID: 2081318033}
   creditsMenu: {fileID: 956545183}
-  logoImg: {fileID: 1609966114}
-  whitePanel: {fileID: 796659609}
   playBtn: {fileID: 1957270307}
   settingsBtn: {fileID: 1803682088}
   settingsBackBtn: {fileID: 1241792118}
