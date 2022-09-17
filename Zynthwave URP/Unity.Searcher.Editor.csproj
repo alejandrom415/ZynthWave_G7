@@ -36,10 +36,10 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Library\PackageCache\com.unity.searcher@4.9.1\Editor\Searcher\Searcher.cs" />
-     <Compile Include="Library\PackageCache\com.unity.searcher@4.9.1\Editor\Searcher\SearcherTreeUtility.cs" />
      <Compile Include="Library\PackageCache\com.unity.searcher@4.9.1\Editor\Searcher\SearcherWindow.cs" />
      <Compile Include="Library\PackageCache\com.unity.searcher@4.9.1\Editor\Searcher\SearcherControl.cs" />
+     <Compile Include="Library\PackageCache\com.unity.searcher@4.9.1\Editor\Searcher\Searcher.cs" />
+     <Compile Include="Library\PackageCache\com.unity.searcher@4.9.1\Editor\Searcher\SearcherTreeUtility.cs" />
      <Compile Include="Library\PackageCache\com.unity.searcher@4.9.1\Editor\AssemblyInfo.cs" />
      <Compile Include="Library\PackageCache\com.unity.searcher@4.9.1\Editor\Searcher\SearcherHighlighter.cs" />
      <Compile Include="Library\PackageCache\com.unity.searcher@4.9.1\Editor\Searcher\SearcherItem.cs" />
@@ -741,13 +741,13 @@
       <Project>{01e300b5-e7c5-28cf-18a5-20dc0610c39e}</Project>
       <Name>UnityEngine.UI</Name>
     </ProjectReference>
-    <ProjectReference Include="UnityEngine.TestRunner.csproj">
-      <Project>{20b93c40-e7bd-f36c-f8c7-08456b6f62ac}</Project>
-      <Name>UnityEngine.TestRunner</Name>
-    </ProjectReference>
     <ProjectReference Include="UnityEditor.TestRunner.csproj">
       <Project>{f58fda68-ab8a-721f-bc7a-2ee7b4f499cd}</Project>
       <Name>UnityEditor.TestRunner</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.TestRunner.csproj">
+      <Project>{20b93c40-e7bd-f36c-f8c7-08456b6f62ac}</Project>
+      <Name>UnityEngine.TestRunner</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

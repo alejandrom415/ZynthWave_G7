@@ -36,8 +36,8 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Library\PackageCache\com.unity.services.core@1.4.2\Runtime\Analytics\AssemblyInfo.cs" />
      <Compile Include="Library\PackageCache\com.unity.services.core@1.4.2\Runtime\Analytics\AnalyticsOptionsExtensions.cs" />
+     <Compile Include="Library\PackageCache\com.unity.services.core@1.4.2\Runtime\Analytics\AssemblyInfo.cs" />
      <None Include="Library\PackageCache\com.unity.services.core@1.4.2\Runtime\Analytics\Unity.Services.Core.Analytics.asmdef" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity 2021.3.8f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
