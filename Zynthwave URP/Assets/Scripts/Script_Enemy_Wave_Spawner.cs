@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Script_Enemy_Wave_Spawner : MonoBehaviour
 {
     public enum SpawnState { SPAWNING, WAITING, COUNTING };
 
-    public GameObject shopBackground, nextBtn;
+    public GameObject shopBackground;
 
     [System.Serializable]
 
@@ -86,8 +87,7 @@ public class Script_Enemy_Wave_Spawner : MonoBehaviour
         waveCountdown = timeBetweenWaves;
 
         shopBackground.SetActive(true);
-        EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(nextBtn);
+        
 
         if (nextWave + 1 > waves.Length - 1)
         {
@@ -148,6 +148,7 @@ public class Script_Enemy_Wave_Spawner : MonoBehaviour
 
     public void StartNextWave()
     {
+        shopBackground.SetActive(false);
         waveCountdown = 1;
         return;
     }
