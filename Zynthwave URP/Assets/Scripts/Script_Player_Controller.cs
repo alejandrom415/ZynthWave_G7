@@ -16,6 +16,7 @@ public class Script_Player_Controller : MonoBehaviour
     public InputAction rightStick;
     public ParticleSystem bullets;
     public TMP_Text gameOverText;
+    //public TMP_Text heartsText;
     public int maxHearts = 4;
     public int minHearts = 0;
     public int hearts { get { return currentHearts; } }
@@ -43,7 +44,14 @@ public class Script_Player_Controller : MonoBehaviour
         currentHearts = maxHearts;
 
         gameOverText.text = "";
+        // hearts = 4;
+        // SetHeartsText();
     }
+
+    // void SetHeartsText()
+    // {
+    //     heartsText.text = "Hearts: " + text.ToString;
+    // }
 
     void Update()
     {

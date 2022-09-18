@@ -86,8 +86,9 @@ public class Script_Enemy_Wave_Spawner : MonoBehaviour
 
         waveCountdown = timeBetweenWaves;
 
-        shopBackground.SetActive(true);
         
+        shopBackground.SetActive(true);
+        Time.timeScale = 0;
 
         if (nextWave + 1 > waves.Length - 1)
         {
@@ -149,6 +150,7 @@ public class Script_Enemy_Wave_Spawner : MonoBehaviour
     public void StartNextWave()
     {
         shopBackground.SetActive(false);
+        Time.timeScale = 1;
         waveCountdown = 1;
         return;
     }
