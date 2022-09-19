@@ -368,6 +368,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 263183227}
   m_CullTransparentMesh: 1
+--- !u!1 &343018654 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5779033915286422372, guid: 14da16ac1d813461d91e1e297cad5c79,
+    type: 3}
+  m_PrefabInstance: {fileID: 5779033915448561248}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &464373126
 GameObject:
   m_ObjectHideFlags: 0
@@ -766,7 +772,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 5779033915448561248}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 343018654}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55eaa5f6cc7ff49e3bc0127a500a105a, type: 3}
@@ -1119,6 +1125,8 @@ MonoBehaviour:
   speedBtn: {fileID: 1013358641}
   accuracyBtn: {fileID: 2133747039}
   firerateBtn: {fileID: 1264475628}
+  playerController: {fileID: 67986668}
+  spawnerController: {fileID: 343018654}
 --- !u!1 &891781146
 GameObject:
   m_ObjectHideFlags: 0
@@ -1203,9 +1211,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 542866381}
-        m_TargetAssemblyTypeName: Script_Enemy_Wave_Spawner, Assembly-CSharp
-        m_MethodName: StartNextWave
+      - m_Target: {fileID: 669727679}
+        m_TargetAssemblyTypeName: Script_shopController, Assembly-CSharp
+        m_MethodName: BuffHealth
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

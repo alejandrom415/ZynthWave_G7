@@ -6,46 +6,40 @@ using UnityEngine.UI;
 
 public class Script_shopController : MonoBehaviour
 {
-    public GameObject healthBtn, speedBtn, accuracyBtn, firerateBtn;
+    public GameObject healthBtn, speedBtn, accuracyBtn, firerateBtn, playerController, spawnerController;
 
-    //Rigidbody rb;
+    Script_Player_Controller player;
+    Script_Enemy_Wave_Spawner spawner;
     
     void Awake()
     {
-        //Script_Player_Controller player = gameObject.GetComponent<Script_Player_Controller>();
-        //rb.constraints = RigidbodyConstraints.FreezePosition;
-        //Time.timeScale = 0;
+        player = playerController.GetComponent<Script_Player_Controller>();
+        spawner = spawnerController.GetComponent<Script_Enemy_Wave_Spawner>();
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(healthBtn);
     }
 
     public void BuffHealth()
     {
-        Script_Player_Controller player = gameObject.GetComponent<Script_Player_Controller>();
-        if (player.currentHearts < 4)
-        {
-            player.ChangeHearts(+1);
-        }
         player.ChangeHearts(+1);
-        Script_Enemy_Wave_Spawner spawner = gameObject.GetComponent<Script_Enemy_Wave_Spawner>();
         spawner.StartNextWave();
     }
 
     public void BuffSpeed()
     {
-        Script_Enemy_Wave_Spawner spawner = gameObject.GetComponent<Script_Enemy_Wave_Spawner>();
-        spawner.StartNextWave(); //
+        
+        spawner.StartNextWave();
     }
 
     public void BuffAccuracy()
     {
-        Script_Enemy_Wave_Spawner spawner = gameObject.GetComponent<Script_Enemy_Wave_Spawner>();
-        spawner.StartNextWave(); //
+        
+        spawner.StartNextWave();
     }
 
     public void BuffFireRate()
     {
-        Script_Enemy_Wave_Spawner spawner = gameObject.GetComponent<Script_Enemy_Wave_Spawner>();
-        spawner.StartNextWave(); //
+        
+        spawner.StartNextWave();
     }
 }
