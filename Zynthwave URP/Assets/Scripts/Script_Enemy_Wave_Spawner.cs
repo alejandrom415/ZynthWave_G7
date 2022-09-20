@@ -8,7 +8,7 @@ public class Script_Enemy_Wave_Spawner : MonoBehaviour
 {
     public enum SpawnState { SPAWNING, WAITING, COUNTING };
 
-    public GameObject shopBackground;
+    public GameObject shopBackground, waveStartImg, waveEndImg;
 
     [System.Serializable]
 
@@ -86,7 +86,8 @@ public class Script_Enemy_Wave_Spawner : MonoBehaviour
 
         waveCountdown = timeBetweenWaves;
 
-        
+        waveStartImg.SetActive(false);
+        waveEndImg.SetActive(true);
         shopBackground.SetActive(true);
         Time.timeScale = 0;
 
@@ -151,6 +152,8 @@ public class Script_Enemy_Wave_Spawner : MonoBehaviour
     {
         shopBackground.SetActive(false);
         Time.timeScale = 1;
+        waveEndImg.SetActive(false);
+        waveStartImg.SetActive(true);
         waveCountdown = 1;
         return;
     }
