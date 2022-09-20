@@ -80,7 +80,7 @@ public class Script_Enemy_Wave_Spawner : MonoBehaviour
 
     void WaveCompleted()
     {
-        Debug.Log ("WAVE COMPLETED");
+        //Debug.Log ("WAVE COMPLETED");
 
         state = SpawnState.COUNTING;
 

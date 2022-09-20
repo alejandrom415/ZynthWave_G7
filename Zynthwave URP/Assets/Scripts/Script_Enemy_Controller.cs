@@ -9,11 +9,13 @@ public class Script_Enemy_Controller : MonoBehaviour
     public float speed;
     public GameObject enemydeathparticlesPrefab;
     Rigidbody rb;
+    [Range(0f, 1f)]
+    public float dropRate;
+    public List<GameObject> drops;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-
         player = GameObject.Find("Player");
     }
 
@@ -27,14 +29,14 @@ public class Script_Enemy_Controller : MonoBehaviour
 
     void OnParticleCollision() 
     {
-        Debug.Log("Ouch!");
+        //Debug.Log("Ouch!");
         
         healthPoints--;
         
         if (healthPoints <= 0) 
         {
             Instantiate(enemydeathparticlesPrefab, rb.position + Vector3.up * 0.5f, Quaternion.identity);
-            
+            Drop();
             Destroy(gameObject);
         }
     }
@@ -46,6 +48,16 @@ public class Script_Enemy_Controller : MonoBehaviour
         if (player != null)
         {
             player.ChangeHearts(-1);
+        }
+    }
+    void Drop() {
+        float roll;
+        roll = Random.Range(0f,1f);
+        Debug.Log(roll);
+        if (roll < dropRate) {
+            Instantiate(drops[0], transform.position, transform.rotation);
+            
+            //instantiate pickup
         }
     }
 }
