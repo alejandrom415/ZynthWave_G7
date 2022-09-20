@@ -21,7 +21,7 @@ public class Script_shopController : MonoBehaviour
 
     public void BuffHealth()
     {
-        player.ChangeHearts(+1);
+        player.ChangeHealthBuff();
         spawner.StartNextWave();
     }
 

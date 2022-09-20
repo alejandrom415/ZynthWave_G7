@@ -379,6 +379,7 @@
 "Assets/Scripts/Script_Camera_Controller.cs"
 "Assets/Scripts/Script_Enemy_Controller.cs"
 "Assets/Scripts/Script_Enemy_Wave_Spawner.cs"
+"Assets/Scripts/Script_Health_Bar.cs"
 "Assets/Scripts/Script_Menu_Manager.cs"
 "Assets/Scripts/Script_Pickup_Rotator.cs"
 "Assets/Scripts/Script_Player_Controller.cs"

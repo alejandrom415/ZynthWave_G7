@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using TMPro;
 
 public class Script_Player_Controller : MonoBehaviour
@@ -17,13 +18,14 @@ public class Script_Player_Controller : MonoBehaviour
     public ParticleSystem bullets;
     public TMP_Text gameOverText;
     //public TMP_Text heartsText;
-    public int maxHearts = 4;
+    public int maxHearts = 5;
     public int minHearts = 0;
     public int hearts { get { return currentHearts; } }
     public int currentHearts;
     public float timeInvincible = 2.0f;
     bool isInvincible;
     float invincibleTimer;
+    public Script_Health_Bar healthBar;
 
     //set up controller
     void OnEnable() {
@@ -42,6 +44,7 @@ public class Script_Player_Controller : MonoBehaviour
         bullets = bullets.GetComponent<ParticleSystem>();
 
         currentHearts = maxHearts;
+        healthBar.SetMaxHealth(maxHearts);
 
         gameOverText.text = "";
         // hearts = 4;
@@ -68,6 +71,12 @@ public class Script_Player_Controller : MonoBehaviour
             SceneManager.LoadScene("MainMenu");
         }
     }
+
+    public void TakeDamage()
+    {
+        healthBar.SetHealth(currentHearts);
+    }
+
 
     public void ChangeHearts(int amount)
     {
@@ -159,6 +168,15 @@ public class Script_Player_Controller : MonoBehaviour
 
         speed = 0;
     }
+
+    public void ChangeHealthBuff()
+    {
+        maxHearts = maxHearts + 1;
+        currentHearts = maxHearts;
+        healthBar.SetMaxHealth(maxHearts);
+    }
+
+
 
     /*void CheckInput() {
         if (Input.GetKey(KeyCode.W)) {
