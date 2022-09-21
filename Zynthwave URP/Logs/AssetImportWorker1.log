@@ -1,30 +1,23 @@
-Unity Editor version:    2021.3.8f1 (b30333d56e81)
-Branch:                  2021.3/staging
-Build type:              Release
-Batch mode:              YES
-macOS version:           Version 12.3.1 (Build 21E258)
-Darwin version:          21.4.0
-Architecture:            x86_64
-Running under Rosetta:   NO
-Available memory:        16384 MB
 Using pre-set license
-Pro License: YES
+Built from '2021.3/staging' branch; Version is '2021.3.8f1 (b30333d56e81) revision 11731763'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19044) 64bit Professional' Language: 'en' Physical Memory: 16310 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
-/Applications/Unity/Hub/Editor/2021.3.8f1/Unity.app/Contents/MacOS/Unity
+C:\Program Files\Unity\Hub\Editor\2021.3.8f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker1
 -projectPath
-/Users/alejandromorales/Desktop/ZynthWave_G7/Zynthwave URP
+D:/Users/Cameron Cavossa/Desktop/Group G7/ZynthWave_G7/Zynthwave URP
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-55757
-Successfully changed project path to: /Users/alejandromorales/Desktop/ZynthWave_G7/Zynthwave URP
-/Users/alejandromorales/Desktop/ZynthWave_G7/Zynthwave URP
+52862
+Successfully changed project path to: D:/Users/Cameron Cavossa/Desktop/Group G7/ZynthWave_G7/Zynthwave URP
+D:/Users/Cameron Cavossa/Desktop/Group G7/ZynthWave_G7/Zynthwave URP
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -54,201 +47,125 @@ Successfully changed project path to: /Users/alejandromorales/Desktop/ZynthWave_
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 175.99 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 83.53 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.8f1 (b30333d56e81)
-[Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/2021.3.8f1/Unity.app/Contents/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path /Users/alejandromorales/Desktop/ZynthWave_G7/Zynthwave URP/Assets
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Users/Cameron Cavossa/Desktop/Group G7/ZynthWave_G7/Zynthwave URP/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
-Color LCD preferred device: Intel(R) UHD Graphics 630 (low power)
-Metal devices available: 2
-0: AMD Radeon Pro 560X (high power)
-1: Intel(R) UHD Graphics 630 (low power)
-Using device AMD Radeon Pro 560X (high power)
-Initializing Metal device caps: AMD Radeon Pro 560X
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 3060 Ti (ID=0x2489)
+    Vendor:   NVIDIA
+    VRAM:     8050 MB
+    Driver:   31.0.15.1694
 Initialize mono
-Mono path[0] = '/Applications/Unity/Hub/Editor/2021.3.8f1/Unity.app/Contents/Managed'
-Mono path[1] = '/Applications/Unity/Hub/Editor/2021.3.8f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit-macos'
-Mono config path = '/Applications/Unity/Hub/Editor/2021.3.8f1/Unity.app/Contents/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56848
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56296
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: /Applications/Unity/Hub/Editor/2021.3.8f1/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
-Register platform support module: /Applications/Unity/Hub/Editor/2021.3.8f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
-Register platform support module: /Applications/Unity/Hub/Editor/2021.3.8f1/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.004156 seconds.
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.004685 seconds.
 Native extension for WindowsStandalone target not found
-Native extension for OSXStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 124.79 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 81.24 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.862 seconds
+- Completed reload, in  0.450 seconds
 Domain Reload Profiling:
-	ReloadAssembly (862ms)
-		BeginReloadAssembly (122ms)
+	ReloadAssembly (450ms)
+		BeginReloadAssembly (47ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (608ms)
-			LoadAssemblies (124ms)
+			CreateAndSetChildDomain (0ms)
+		EndReloadAssembly (328ms)
+			LoadAssemblies (45ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (155ms)
+			SetupTypeCache (65ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (46ms)
-			SetupLoadedEditorAssemblies (337ms)
+			RebuildScriptCaches (17ms)
+			SetupLoadedEditorAssemblies (212ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (11ms)
+				InitializePlatformSupportModulesInManaged (5ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (125ms)
+				RefreshPlugins (81ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (151ms)
-				ProcessInitializeOnLoadMethodAttributes (48ms)
+				ProcessInitializeOnLoadAttributes (95ms)
+				ProcessInitializeOnLoadMethodAttributes (30ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.003551 seconds.
+Registered in 0.003850 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image /Users/alejandromorales/Desktop/ZynthWave_G7/Zynthwave URP/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image /Users/alejandromorales/Desktop/ZynthWave_G7/Zynthwave URP/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image D:\Users\Cameron Cavossa\Desktop\Group G7\ZynthWave_G7\Zynthwave URP\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\Users\Cameron Cavossa\Desktop\Group G7\ZynthWave_G7\Zynthwave URP\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Native extension for OSXStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 155.43 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 85.50 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.039 seconds
+- Completed reload, in  0.974 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2040ms)
-		BeginReloadAssembly (132ms)
+	ReloadAssembly (975ms)
+		BeginReloadAssembly (77ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (9ms)
+			DisableScriptedObjects (4ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (27ms)
-		EndReloadAssembly (1747ms)
-			LoadAssemblies (167ms)
+			CreateAndSetChildDomain (14ms)
+		EndReloadAssembly (811ms)
+			LoadAssemblies (61ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (418ms)
+			SetupTypeCache (187ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (118ms)
-			SetupLoadedEditorAssemblies (969ms)
+			RebuildScriptCaches (46ms)
+			SetupLoadedEditorAssemblies (488ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (7ms)
+				InitializePlatformSupportModulesInManaged (3ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (155ms)
-				BeforeProcessingInitializeOnLoad (173ms)
-				ProcessInitializeOnLoadAttributes (513ms)
-				ProcessInitializeOnLoadMethodAttributes (119ms)
-				AfterProcessingInitializeOnLoad (1ms)
+				RefreshPlugins (86ms)
+				BeforeProcessingInitializeOnLoad (93ms)
+				ProcessInitializeOnLoadAttributes (243ms)
+				ProcessInitializeOnLoadMethodAttributes (56ms)
+				AfterProcessingInitializeOnLoad (6ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (5ms)
+			AwakeInstancesAfterBackupRestoration (4ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launching external process: /Applications/Unity/Hub/Editor/2021.3.8f1/Unity.app/Contents/Tools/UnityShaderCompiler
-Launched and connected shader compiler UnityShaderCompiler after 0.08 seconds
-Refreshing native plugins compatible for Editor in 0.98 ms, found 2 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 1.66 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 5990 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 53 unused Assets / (0.8 MB). Loaded Objects now: 6447.
-Memory consumption went from 369.5 MB to 368.7 MB.
-Total: 5.577614 ms (FindLiveObjects: 0.487155 ms CreateObjectMapping: 0.452858 ms MarkObjects: 4.072661 ms  DeleteObjects: 0.563828 ms)
+Memory consumption went from 236.6 MB to 235.7 MB.
+Total: 6.005400 ms (FindLiveObjects: 0.736900 ms CreateObjectMapping: 0.461400 ms MarkObjects: 4.364900 ms  DeleteObjects: 0.441000 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
   custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 959666.920305 seconds.
-  path: Assets/Art/Models/Pistol Run.fbx
-  artifactKey: Guid(86389e5ad4f4b9d4c99da7840c4260fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Models/Pistol Run.fbx using Guid(86389e5ad4f4b9d4c99da7840c4260fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff5b93ea3173f520420727c465f9be92') in 0.582797 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000151 seconds.
-  path: Assets/Plugins/LeanTween/Examples/Models/SimpleAvatar.fbx
-  artifactKey: Guid(c8c942998fe7e4845bed23e105bd031f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Plugins/LeanTween/Examples/Models/SimpleAvatar.fbx using Guid(c8c942998fe7e4845bed23e105bd031f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'efa97f0f92880beba8bc3cdb29b899ca') in 0.032571 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000130 seconds.
-  path: Assets/Models/Pistol Run.fbx
-  artifactKey: Guid(e1f4f69e63268184588c056f577ae34d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Pistol Run.fbx using Guid(e1f4f69e63268184588c056f577ae34d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c22fe63167ef6e3e38781b53afef89b6') in 0.061833 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000138 seconds.
-  path: Assets/UniversalRenderPipelineGlobalSettings.asset
-  artifactKey: Guid(18dc0cd2c080841dea60987a38ce93fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/UniversalRenderPipelineGlobalSettings.asset using Guid(18dc0cd2c080841dea60987a38ce93fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2eecc253734895facb66926253515a97') in 0.123703 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000084 seconds.
+  Time since last request: 10943.108580 seconds.
   path: Assets/Readme.asset
   artifactKey: Guid(8105016687592461f977c054a80ce2f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Readme.asset using Guid(8105016687592461f977c054a80ce2f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f2f2b655bf21bdea72856b1c39a4a32') in 0.006115 seconds 
+Start importing Assets/Readme.asset using Guid(8105016687592461f977c054a80ce2f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f8df6bccfaeea7c160e2ca3bda91111') in 0.034176 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000098 seconds.
-  path: Assets/Art/Models/MainCharacter_Model.fbx
-  artifactKey: Guid(06be7065d5b4d6645b35df320cc2532a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Models/MainCharacter_Model.fbx using Guid(06be7065d5b4d6645b35df320cc2532a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15e839cd2cb041296cd4da1db86f85cf') in 0.072656 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000154 seconds.
-  path: Assets/InputSystem.inputsettings.asset
-  artifactKey: Guid(04368b572f40b430ca4b79426f0f39e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/InputSystem.inputsettings.asset using Guid(04368b572f40b430ca4b79426f0f39e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9fef541c436a777d685ff2608b7c7a5f') in 0.002829 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 12.461262 seconds.
-  path: Assets/Models/Materials/MainCharacter_Texture_NeonColors 2.mat
-  artifactKey: Guid(59381b7baf2c74b34ae62d0c53af7b7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Materials/MainCharacter_Texture_NeonColors 2.mat using Guid(59381b7baf2c74b34ae62d0c53af7b7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c15c68e158371d9eb130fba1a63f4b77') in 0.189321 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 117.622135 seconds.
-  path: Assets/Plugins/LeanTween/Examples/Models/LeanTween-Icon.fbx
-  artifactKey: Guid(6fc4240da91ab4747a411a8313faed53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Plugins/LeanTween/Examples/Models/LeanTween-Icon.fbx using Guid(6fc4240da91ab4747a411a8313faed53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ec005a69b1ac67cdde31e75064a752b') in 0.090084 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 45.426843 seconds.
-  path: Assets/Prefabs/EnemyDeathParticles.prefab
-  artifactKey: Guid(62f3b05a9f45f43c18187ddfa011046e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/EnemyDeathParticles.prefab using Guid(62f3b05a9f45f43c18187ddfa011046e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4712d043d80dcfd37e349eeddaeb51b8') in 0.116756 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000104 seconds.
-  path: Assets/Prefabs/EnemySpawnPoint.prefab
-  artifactKey: Guid(e4a934d6365e34b74b698191217ebf9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/EnemySpawnPoint.prefab using Guid(e4a934d6365e34b74b698191217ebf9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b633e3ed3c5a2d36db501272256bc01f') in 0.006162 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000083 seconds.
-  path: Assets/Prefabs/Player.prefab
-  artifactKey: Guid(3a8e9eedb37a64f0199fafe016ad7e09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Player.prefab using Guid(3a8e9eedb37a64f0199fafe016ad7e09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '16d6129f40c880ba524c08cf8f07dd2d') in 0.026079 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000077 seconds.
-  path: Assets/Prefabs/SpeedPickup.prefab
-  artifactKey: Guid(92122bd91ade14c99931b5652494b0e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/SpeedPickup.prefab using Guid(92122bd91ade14c99931b5652494b0e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d5b60fb5121b162e7fdd929f257959e') in 0.013851 seconds 
-Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-AssetImportWorker is now disconnected from the server
-Process exiting
+  Time since last request: 182.825143 seconds.
+  path: Assets/Art/Models/Pistol Run.fbx
+  artifactKey: Guid(86389e5ad4f4b9d4c99da7840c4260fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Models/Pistol Run.fbx using Guid(86389e5ad4f4b9d4c99da7840c4260fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7fec2312fce5bbdd52ea85c85553228b') in 0.208627 seconds 
