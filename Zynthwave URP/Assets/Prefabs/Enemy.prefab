@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 8043561161643580775}
   - component: {fileID: 8043561161643580795}
   - component: {fileID: 3773628378155981921}
+  - component: {fileID: 8308133342123514678}
+  - component: {fileID: 8021910449029908528}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -129,5 +131,41 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 96
+  m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!111 &8308133342123514678
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8043561161643580772}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: -203655887218126122, guid: 400ad4e8f0dc62d4e95fdfac533c431c,
+    type: 3}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!95 &8021910449029908528
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8043561161643580772}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 400ad4e8f0dc62d4e95fdfac533c431c, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
