@@ -2526,8 +2526,8 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
+  m_LookAt: {fileID: 543450653709618678}
+  m_Follow: {fileID: 543450653709618678}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 5
@@ -3020,7 +3020,7 @@ PrefabInstance:
     - target: {fileID: 4527321848024653742, guid: 123e5571ea9964bdfa221121e6a86618,
         type: 3}
       propertyPath: m_Name
-      value: player_animated
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 123e5571ea9964bdfa221121e6a86618, type: 3}
