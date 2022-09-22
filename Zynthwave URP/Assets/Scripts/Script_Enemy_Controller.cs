@@ -9,12 +9,15 @@ public class Script_Enemy_Controller : MonoBehaviour
     public float speed;
     public GameObject enemydeathparticlesPrefab;
     Rigidbody rb;
+    Animator anim;
     //public Script_Health_Bar healthBar;
     //public Script_Player_Controller player;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        anim = GetComponent<Animator>();
 
         player = GameObject.Find("Player");
     }

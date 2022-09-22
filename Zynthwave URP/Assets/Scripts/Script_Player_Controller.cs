@@ -26,7 +26,7 @@ public class Script_Player_Controller : MonoBehaviour
     bool isInvincible;
     float invincibleTimer;
     public Script_Health_Bar healthBar;
-    //Animator anim;
+    Animator anim;
 
     //set up controller
     void OnEnable() {
@@ -44,7 +44,7 @@ public class Script_Player_Controller : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         bullets = bullets.GetComponent<ParticleSystem>();
 
-        //anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
 
         currentHearts = maxHearts;
         healthBar.SetMaxHealth(maxHearts);
