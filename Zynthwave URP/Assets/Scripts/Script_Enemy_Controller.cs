@@ -55,7 +55,7 @@ public class Script_Enemy_Controller : MonoBehaviour
         roll = Random.Range(0f,1f);
         Debug.Log(roll);
         if (roll < dropRate) {
-            Instantiate(drops[0], transform.position, transform.rotation);
+            Instantiate(drops[Random.Range(0,drops.Count-1)], transform.position, transform.rotation);
             
             //instantiate pickup
         }
