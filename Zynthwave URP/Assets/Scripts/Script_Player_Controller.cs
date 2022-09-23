@@ -15,6 +15,7 @@ public class Script_Player_Controller : MonoBehaviour
     //public float stopSpeed;
     public InputAction leftStick;
     public InputAction rightStick;
+    public InputAction startButton;
     public ParticleSystem bullets;
     public TMP_Text gameOverText;
     //public TMP_Text heartsText;
@@ -31,10 +32,12 @@ public class Script_Player_Controller : MonoBehaviour
     void OnEnable() {
         leftStick.Enable();
         rightStick.Enable();
+        startButton.Enable();
     }
     void OnDisable() {
         leftStick.Disable();
         rightStick.Disable();
+        startButton.Disable();
     }
 
     // Start is called before the first frame update
@@ -119,6 +122,9 @@ public class Script_Player_Controller : MonoBehaviour
             Shoot(true);
         } else {
             Shoot(false);
+        }
+        if (startButton.triggered) {
+            SceneManager.LoadScene("MainMenu");
         }
         //Debug.Log(lookDirection);
     }
