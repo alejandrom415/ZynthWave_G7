@@ -42,11 +42,11 @@
      <Compile Include="Assets\Scripts\Script_Menu_Manager.cs" />
      <Compile Include="Assets\Scripts\Script_Enemy_Wave_Spawner.cs" />
      <Compile Include="Assets\Scripts\Script_Enemy_Controller.cs" />
+     <Compile Include="Assets\Scripts\Script_GameOver.cs" />
      <Compile Include="Assets\Scripts\Script_Player_Controller.cs" />
      <Compile Include="Assets\Scripts\Script_shopController.cs" />
      <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
      <Compile Include="Assets\Scripts\Script_Health_Bar.cs" />
-     <Compile Include="Assets\Scripts\Script_GameOver.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

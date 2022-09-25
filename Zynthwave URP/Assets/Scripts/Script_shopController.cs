@@ -6,26 +6,20 @@ using UnityEngine.UI;
 
 public class Script_shopController : MonoBehaviour
 {
-    public GameObject healthBtn, speedBtn, accuracyBtn, firerateBtn, playerController, spawnerController; //particleController
+    public GameObject healthBtn, speedBtn, accuracyBtn, firerateBtn, playerController, spawnerController;
     
     public GameObject healthImg;
 
     public ParticleSystem bullets;
 
-    public float rateOverTime;
-
-    public float arc;
-
     Script_Player_Controller player;
     Script_Enemy_Wave_Spawner spawner;
-    Script_Particle_System particle;
     
     void Awake()
     {
         bullets = bullets.GetComponent<ParticleSystem>();
         player = playerController.GetComponent<Script_Player_Controller>();
         spawner = spawnerController.GetComponent<Script_Enemy_Wave_Spawner>();
-        //particle = particleController.GetComponent<Script_Particle_System>();
 
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(healthBtn);
@@ -48,18 +42,13 @@ public class Script_shopController : MonoBehaviour
 
     public void BuffAccuracy()
     {
-        //particle.SetAccuracy();
-
-        player.SetArc();
-
+        player.ChangeArc();
         spawner.StartNextWave();
     }
 
     public void BuffFireRate()
     {
-        //particle.SetROF();
-        player.SetROF();
-        
+        player.ChangeROF();
         spawner.StartNextWave();
     }
 }

@@ -22,10 +22,13 @@ public class Script_Player_Controller : MonoBehaviour
 
     public float arc;
 
+    //private ParticleSystem.EmissionModule em;
+    //private ParticleSystem.ShapeModule sh;
+
     //public TMP_Text gameOverText;
     //public TMP_Text heartsText;
     public int maxHearts = 5;
-    public int minHearts = 0;
+    //public int minHearts = 0;
     public int hearts { get { return currentHearts; } }
     public int currentHearts;
     public float timeInvincible = 2.0f;
@@ -58,9 +61,9 @@ public class Script_Player_Controller : MonoBehaviour
 
         speed = 5;
 
-        arc = 45f;
+        arc = 45;
 
-        rateOverTime = 10f;
+        rateOverTime = 10;
 
         //gameOverText.text = "";
         // hearts = 4;
@@ -79,13 +82,19 @@ public class Script_Player_Controller : MonoBehaviour
             invincibleTimer -= Time.deltaTime;
             if (invincibleTimer < 0)
                 isInvincible = false;
-                Debug.Log ("NOT INVINCIBLE");
+                //Debug.Log ("NOT INVINCIBLE");
         }
 
         if (Input.GetKey("escape"))
         {
             SceneManager.LoadScene("MainMenu");
         }
+
+        ParticleSystem.EmissionModule em = bullets.GetComponent<ParticleSystem>().emission;
+        em.rateOverTime = rateOverTime;
+
+        ParticleSystem.ShapeModule sh = bullets.GetComponent<ParticleSystem>().shape;
+        sh.arc = arc;
     }
 
     public void TakeDamage()
@@ -104,11 +113,6 @@ public class Script_Player_Controller : MonoBehaviour
             invincibleTimer = timeInvincible;
 
             Debug.Log ("INVINCIBLE");
-        }
-
-        if (hearts == minHearts)
-        {
-            GameOver();
         }
 
         currentHearts = Mathf.Clamp(currentHearts + amount, 0, maxHearts);
@@ -174,10 +178,11 @@ public class Script_Player_Controller : MonoBehaviour
         }
     }
 
-    void GameOver()
+    public void GameOver()
     {
-        gameoverPanel.SetActive(true);
         Time.timeScale = 0;
+        gameoverPanel.SetActive(true);
+        
 
         //Destroy(gameObject.GetComponent<Collider>());
         //isInvincible = true;
@@ -197,19 +202,29 @@ public class Script_Player_Controller : MonoBehaviour
         speed = speed + 1;
     }
 
-    public void SetROF()
-    {
-        ParticleSystem.EmissionModule em = bullets.GetComponent<ParticleSystem>().emission;
-        
-        em.rateOverTime = rateOverTime + 10f;
-    }
+    // public void SetROF()
+    // {
+    //     ParticleSystem.EmissionModule em = bullets.GetComponent<ParticleSystem>().emission;
+    //     em.rateOverTime = rateOverTime;
+    //     ChangeROF();
+    // }
 
-    public void SetArc()
-    {
-        ParticleSystem.ShapeModule sh = bullets.GetComponent<ParticleSystem>().shape;
+    public void ChangeROF() => rateOverTime = rateOverTime + 2;
+    // {
+    //     rateOverTime = rateOverTime + 2;
+    // }
 
-        sh.arc = arc - 30f;
-    }
+    // public void SetArc()
+    // {
+    //     ParticleSystem.ShapeModule sh = bullets.GetComponent<ParticleSystem>().shape;
+    //     sh.arc = arc;
+    //     ChangeArc();
+    // }
+
+    public void ChangeArc() => arc = arc - 5;
+    // {
+    //     arc = arc - 5;
+    // }
 
     /*void CheckInput() {
         if (Input.GetKey(KeyCode.W)) {

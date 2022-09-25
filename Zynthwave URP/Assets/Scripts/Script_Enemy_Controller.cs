@@ -9,8 +9,6 @@ public class Script_Enemy_Controller : MonoBehaviour
     public float speed;
     public GameObject enemydeathparticlesPrefab;
     Rigidbody rb;
-    //public Script_Health_Bar healthBar;
-    //public Script_Player_Controller player;
 
     void Start()
     {
@@ -44,13 +42,17 @@ public class Script_Enemy_Controller : MonoBehaviour
     void OnCollisionEnter(Collision other)
     {
         Script_Player_Controller player = other.gameObject.GetComponent<Script_Player_Controller>();
-        //Script_Health_Bar hpBar = other.gameObject.GetComponent<Script_Health_Bar>();
 
         if (player != null)
         {
             player.ChangeHearts(-1);
             player.TakeDamage();
-            //hpBar.SetHealth(hearts);
         }
+
+        if (player != null && player.currentHearts < 1)
+        {
+            player.GameOver();
+        }
+
     }
 }
