@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1593,11 +1593,13 @@ MonoBehaviour:
   firerateBtn: {fileID: 1264475628}
   playerController: {fileID: 67986668}
   spawnerController: {fileID: 343018654}
-  particleController: {fileID: 692433996}
   healthImg: {fileID: 1772189961}
---- !u!1 &692433996 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2293623346457630177, guid: 3a8e9eedb37a64f0199fafe016ad7e09,
+  bullets: {fileID: 692433999}
+  rateOverTime: 0
+  arc: 0
+--- !u!198 &692433999 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6353966656520719547, guid: 3a8e9eedb37a64f0199fafe016ad7e09,
     type: 3}
   m_PrefabInstance: {fileID: 1759845413106943702}
   m_PrefabAsset: {fileID: 0}
@@ -3410,6 +3412,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 990737279889013827, guid: 3a8e9eedb37a64f0199fafe016ad7e09,
+        type: 3}
+      propertyPath: arc
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 990737279889013827, guid: 3a8e9eedb37a64f0199fafe016ad7e09,
+        type: 3}
+      propertyPath: rateOverTime
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1759845413174272550, guid: 3a8e9eedb37a64f0199fafe016ad7e09,
         type: 3}
       propertyPath: m_RootOrder
@@ -3490,6 +3502,28 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6353966656520719547, guid: 3a8e9eedb37a64f0199fafe016ad7e09,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538454761188929368, guid: 3a8e9eedb37a64f0199fafe016ad7e09,
+        type: 3}
+      propertyPath: m_Animations.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538454761188929368, guid: 3a8e9eedb37a64f0199fafe016ad7e09,
+        type: 3}
+      propertyPath: m_Animations.Array.data[0]
+      value: 
+      objectReference: {fileID: -203655887218126122, guid: 086ab5bbd379e4be7bd18f78d8836f13,
+        type: 3}
+    - target: {fileID: 6538454761188929368, guid: 3a8e9eedb37a64f0199fafe016ad7e09,
+        type: 3}
+      propertyPath: m_Animations.Array.data[1]
+      value: 
+      objectReference: {fileID: -203655887218126122, guid: e1f4f69e63268184588c056f577ae34d,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a8e9eedb37a64f0199fafe016ad7e09, type: 3}
 --- !u!1001 &1960321196856992779

@@ -1,17 +1,17 @@
-using System;
+//using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(ParticleSystem))]
+//[RequireComponent(typeof(ParticleSystem))]
 
 public class Script_Particle_System : MonoBehaviour
 {
     //public ParticleSystemShapeType shapeType = ParticleSystemShapeType.Circle;
 
-    public float arc;
+    public int arc;
 
-    public float rateOverTime;
+    public int rateOverTime;
 
     private ParticleSystem sys;
 
@@ -23,6 +23,10 @@ public class Script_Particle_System : MonoBehaviour
     void Start()
     {
         sys = GetComponent<ParticleSystem>();
+
+        //shape.arc = 45;
+
+        //emission.rateOverTime = 10;
     }
 
     // Update is called once per frame

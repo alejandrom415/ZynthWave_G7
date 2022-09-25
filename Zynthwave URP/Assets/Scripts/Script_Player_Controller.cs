@@ -17,6 +17,11 @@ public class Script_Player_Controller : MonoBehaviour
     public InputAction rightStick;
     public InputAction startButton;
     public ParticleSystem bullets;
+
+    public float rateOverTime;
+
+    public float arc;
+
     //public TMP_Text gameOverText;
     //public TMP_Text heartsText;
     public int maxHearts = 5;
@@ -52,6 +57,10 @@ public class Script_Player_Controller : MonoBehaviour
         healthBar.SetMaxHealth(maxHearts);
 
         speed = 5;
+
+        arc = 45f;
+
+        rateOverTime = 10f;
 
         //gameOverText.text = "";
         // hearts = 4;
@@ -188,9 +197,19 @@ public class Script_Player_Controller : MonoBehaviour
         speed = speed + 1;
     }
 
+    public void SetROF()
+    {
+        ParticleSystem.EmissionModule em = bullets.GetComponent<ParticleSystem>().emission;
+        
+        em.rateOverTime = rateOverTime + 10f;
+    }
 
+    public void SetArc()
+    {
+        ParticleSystem.ShapeModule sh = bullets.GetComponent<ParticleSystem>().shape;
 
-
+        sh.arc = arc - 30f;
+    }
 
     /*void CheckInput() {
         if (Input.GetKey(KeyCode.W)) {
