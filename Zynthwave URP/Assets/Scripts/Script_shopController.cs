@@ -34,7 +34,7 @@ public class Script_shopController : MonoBehaviour
 
     public void BuffSpeed()
     {
-        
+        player.ChangeSpeedBuff();
         spawner.StartNextWave();
     }
 

@@ -17,7 +17,7 @@ public class Script_Player_Controller : MonoBehaviour
     public InputAction rightStick;
     public InputAction startButton;
     public ParticleSystem bullets;
-    public TMP_Text gameOverText;
+    //public TMP_Text gameOverText;
     //public TMP_Text heartsText;
     public int maxHearts = 5;
     public int minHearts = 0;
@@ -27,6 +27,8 @@ public class Script_Player_Controller : MonoBehaviour
     bool isInvincible;
     float invincibleTimer;
     public Script_Health_Bar healthBar;
+    public Script_GameOver gameoverScreen;
+    public GameObject gameoverPanel;
 
     //set up controller
     void OnEnable() {
@@ -49,7 +51,9 @@ public class Script_Player_Controller : MonoBehaviour
         currentHearts = maxHearts;
         healthBar.SetMaxHealth(maxHearts);
 
-        gameOverText.text = "";
+        speed = 5;
+
+        //gameOverText.text = "";
         // hearts = 4;
         // SetHeartsText();
     }
@@ -79,7 +83,6 @@ public class Script_Player_Controller : MonoBehaviour
     {
         healthBar.SetHealth(currentHearts);
     }
-
 
     public void ChangeHearts(int amount)
     {
@@ -164,15 +167,13 @@ public class Script_Player_Controller : MonoBehaviour
 
     void GameOver()
     {
-        gameOverText.text = "YOU LOSE! - ESC TO QUIT TO MENU";
-        
-        Destroy(gameObject.GetComponent<Collider>());
-        
-        isInvincible = true;
-        
-        invincibleTimer = 9999;
+        gameoverPanel.SetActive(true);
+        Time.timeScale = 0;
 
-        speed = 0;
+        //Destroy(gameObject.GetComponent<Collider>());
+        //isInvincible = true;
+        //invincibleTimer = 9999;
+        //speed = 0;
     }
 
     public void ChangeHealthBuff()
@@ -181,6 +182,13 @@ public class Script_Player_Controller : MonoBehaviour
         currentHearts = maxHearts;
         healthBar.SetMaxHealth(maxHearts);
     }
+
+    public void ChangeSpeedBuff()
+    {
+        speed = speed + 1;
+    }
+
+
 
 
 
