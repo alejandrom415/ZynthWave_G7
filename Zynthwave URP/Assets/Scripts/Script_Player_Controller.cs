@@ -16,10 +16,9 @@ public class Script_Player_Controller : MonoBehaviour
     public InputAction leftStick;
     public InputAction rightStick;
     public InputAction startButton;
+    
     public ParticleSystem bullets;
-
     public float rateOverTime;
-
     public float arc;
 
     //private ParticleSystem.EmissionModule em;
@@ -35,8 +34,9 @@ public class Script_Player_Controller : MonoBehaviour
     bool isInvincible;
     float invincibleTimer;
     public Script_Health_Bar healthBar;
-    public Script_GameOver gameoverScreen;
-    public GameObject gameoverPanel;
+    //public Script_GameOver gameoverScreen;
+    public GameObject gameoverPanel, pauseMenu;
+    public Script_shopController shopBackground;
 
     //set up controller
     void OnEnable() {
@@ -90,6 +90,12 @@ public class Script_Player_Controller : MonoBehaviour
             SceneManager.LoadScene("MainMenu");
         }
 
+        if (startButton.triggered) 
+        {
+            pauseMenu.SetActive(true);
+            Time.timeScale = 0;
+        }
+
         ParticleSystem.EmissionModule em = bullets.GetComponent<ParticleSystem>().emission;
         em.rateOverTime = rateOverTime;
 
@@ -139,9 +145,9 @@ public class Script_Player_Controller : MonoBehaviour
         } else {
             Shoot(false);
         }
-        if (startButton.triggered) {
-            SceneManager.LoadScene("MainMenu");
-        }
+        //if (startButton.triggered) {
+        //    SceneManager.LoadScene("MainMenu");
+        //}
         //Debug.Log(lookDirection);
     }
 

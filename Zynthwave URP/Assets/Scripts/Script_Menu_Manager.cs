@@ -73,9 +73,6 @@ public class Script_Menu_Manager : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(creditsBtn);
     }
 
-    public void QuitGame() => Debug.Log("I quit the game.");
-    // {
-    //     Application.Quit();
-    // }
+    public void QuitGame() => Application.Quit();
    
 }

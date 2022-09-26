@@ -67,6 +67,7 @@ public class Script_Enemy_Wave_Spawner : MonoBehaviour
             if (state != SpawnState.SPAWNING)
             {
                 StartCoroutine( SpawnWave ( waves[nextWave] ) );
+                waveStartImg.SetActive(true);
             }
         }
 
@@ -153,7 +154,7 @@ public class Script_Enemy_Wave_Spawner : MonoBehaviour
         shopBackground.SetActive(false);
         Time.timeScale = 1;
         waveEndImg.SetActive(false);
-        waveStartImg.SetActive(true);
+        //waveStartImg.SetActive(true);
         waveCountdown = 1;
         return;
     }
