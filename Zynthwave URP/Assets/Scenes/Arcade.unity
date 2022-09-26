@@ -1388,6 +1388,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 901994537}
   m_CullTransparentMesh: 1
+--- !u!1 &915179443 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6575442538324188242, guid: 3a8e9eedb37a64f0199fafe016ad7e09,
+    type: 3}
+  m_PrefabInstance: {fileID: 1759845413106943702}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1013358641
 GameObject:
   m_ObjectHideFlags: 0
@@ -2265,13 +2271,98 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1759845413174272551, guid: 3a8e9eedb37a64f0199fafe016ad7e09,
         type: 3}
+      propertyPath: sonicBoom
+      value: 
+      objectReference: {fileID: 915179443}
+    - target: {fileID: 1759845413174272551, guid: 3a8e9eedb37a64f0199fafe016ad7e09,
+        type: 3}
       propertyPath: gameOverText
       value: 
       objectReference: {fileID: 1303330472}
+    - target: {fileID: 1759845413174272551, guid: 3a8e9eedb37a64f0199fafe016ad7e09,
+        type: 3}
+      propertyPath: rightBumper.m_Id
+      value: a92474cf-3b4e-4f8d-bf9d-81a66ce54324
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759845413174272551, guid: 3a8e9eedb37a64f0199fafe016ad7e09,
+        type: 3}
+      propertyPath: rightBumper.m_Name
+      value: Right Bumper
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759845413174272551, guid: 3a8e9eedb37a64f0199fafe016ad7e09,
+        type: 3}
+      propertyPath: rightBumper.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759845413174272551, guid: 3a8e9eedb37a64f0199fafe016ad7e09,
+        type: 3}
+      propertyPath: rightBumper.m_Flags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759845413174272551, guid: 3a8e9eedb37a64f0199fafe016ad7e09,
+        type: 3}
+      propertyPath: rightBumper.m_ExpectedControlType
+      value: Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759845413174272551, guid: 3a8e9eedb37a64f0199fafe016ad7e09,
+        type: 3}
+      propertyPath: rightBumper.m_SingletonActionBindings.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759845413174272551, guid: 3a8e9eedb37a64f0199fafe016ad7e09,
+        type: 3}
+      propertyPath: rightBumper.m_SingletonActionBindings.Array.data[0].m_Id
+      value: 8085083b-92e5-4e7f-9a48-266766588b13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759845413174272551, guid: 3a8e9eedb37a64f0199fafe016ad7e09,
+        type: 3}
+      propertyPath: rightBumper.m_SingletonActionBindings.Array.data[1].m_Id
+      value: 2779d32c-63f1-47f3-89ea-19b716b2f171
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759845413174272551, guid: 3a8e9eedb37a64f0199fafe016ad7e09,
+        type: 3}
+      propertyPath: rightBumper.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <Gamepad>/rightShoulder
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759845413174272551, guid: 3a8e9eedb37a64f0199fafe016ad7e09,
+        type: 3}
+      propertyPath: rightBumper.m_SingletonActionBindings.Array.data[1].m_Path
+      value: <Gamepad>/buttonNorth
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759845413174272551, guid: 3a8e9eedb37a64f0199fafe016ad7e09,
+        type: 3}
+      propertyPath: rightBumper.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Right Bumper
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759845413174272551, guid: 3a8e9eedb37a64f0199fafe016ad7e09,
+        type: 3}
+      propertyPath: rightBumper.m_SingletonActionBindings.Array.data[1].m_Action
+      value: Right Bumper
+      objectReference: {fileID: 0}
     - target: {fileID: 1759845413174272570, guid: 3a8e9eedb37a64f0199fafe016ad7e09,
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6575442538324188242, guid: 3a8e9eedb37a64f0199fafe016ad7e09,
+        type: 3}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6575442538324188242, guid: 3a8e9eedb37a64f0199fafe016ad7e09,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6575442538324188242, guid: 3a8e9eedb37a64f0199fafe016ad7e09,
+        type: 3}
+      propertyPath: m_TagString
+      value: blast
+      objectReference: {fileID: 0}
+    - target: {fileID: 7110503401975187635, guid: 3a8e9eedb37a64f0199fafe016ad7e09,
+        type: 3}
+      propertyPath: lerpDuration
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a8e9eedb37a64f0199fafe016ad7e09, type: 3}

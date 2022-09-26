@@ -8,11 +8,9 @@ public class Script_SonicBlast : MonoBehaviour
     public float blastRadius;
     public float lerpDuration;
 
-    void Start() {
+    void OnEnable() {
         collider = GetComponent<SphereCollider>();
-    }
-
-    void Awake() {
+        Debug.Log("starting blast...");
         StartCoroutine(blast());
     }
 
@@ -24,8 +22,8 @@ public class Script_SonicBlast : MonoBehaviour
             timeElapsed += Time.deltaTime;
             yield return null;
         }
-        collider.radius = blastRadius;
-        gameObject.SetActive(false);
+        collider.radius = 0;
         yield return null;
+        gameObject.SetActive(false);
     }
 }

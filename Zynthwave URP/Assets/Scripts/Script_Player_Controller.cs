@@ -14,6 +14,8 @@ public class Script_Player_Controller : MonoBehaviour
     //public float stopSpeed;
     public InputAction leftStick;
     public InputAction rightStick;
+    public InputAction rightBumper;
+    public GameObject sonicBoom;
     public ParticleSystem bullets;
     public TMP_Text gameOverText;
     //public TMP_Text heartsText;
@@ -29,10 +31,12 @@ public class Script_Player_Controller : MonoBehaviour
     void OnEnable() {
         leftStick.Enable();
         rightStick.Enable();
+        rightBumper.Enable();
     }
     void OnDisable() {
         leftStick.Disable();
         rightStick.Disable();
+        rightBumper.Disable();
     }
 
     // Start is called before the first frame update
@@ -60,12 +64,16 @@ public class Script_Player_Controller : MonoBehaviour
             invincibleTimer -= Time.deltaTime;
             if (invincibleTimer < 0)
                 isInvincible = false;
-                Debug.Log ("NOT INVINCIBLE");
+                //Debug.Log ("NOT INVINCIBLE");
         }
 
         if (Input.GetKey("escape"))
         {
             SceneManager.LoadScene("MainMenu");
+        }
+        if (rightBumper.triggered) {
+            Debug.Log("boom");
+            sonicBoom.SetActive(true);
         }
     }
 
@@ -79,7 +87,7 @@ public class Script_Player_Controller : MonoBehaviour
             isInvincible = true;
             invincibleTimer = timeInvincible;
 
-            Debug.Log ("INVINCIBLE");
+            //Debug.Log ("INVINCIBLE");
         }
 
         if (hearts == minHearts)
@@ -105,7 +113,10 @@ public class Script_Player_Controller : MonoBehaviour
         
         rb.velocity = new Vector3(direction.x*speed, 0, direction.y*speed);
         Vector3 lookVector = new Vector3(lookDirection.x, 0, lookDirection.y);
-        transform.rotation = Quaternion.LookRotation(lookVector);
+        if (lookVector != Vector3.zero) {
+            transform.rotation = Quaternion.LookRotation(lookVector);
+        }
+        
         if (lookDirection.x > 0.8 || lookDirection.x < -0.8 || lookDirection.y > 0.8 || lookDirection.y < -0.8) {
             Shoot(true);
         } else {

@@ -35,16 +35,20 @@ public class Script_Enemy_Controller : MonoBehaviour
         
         if (healthPoints <= 0) 
         {
-            Instantiate(enemydeathparticlesPrefab, rb.position + Vector3.up * 0.5f, Quaternion.identity);
-            Drop();
-            Destroy(gameObject);
+            Die();
+        }
+    }
+
+    void OnTriggerEnter(Collider other) {
+        if (other.gameObject.tag == "blast") {
+            Die();
         }
     }
 
     void OnCollisionEnter(Collision other)
     {
+        Debug.Log(other.gameObject.tag);
         Script_Player_Controller player = other.gameObject.GetComponent<Script_Player_Controller>();
-
         if (player != null)
         {
             player.ChangeHearts(-1);
@@ -59,5 +63,10 @@ public class Script_Enemy_Controller : MonoBehaviour
             
             //instantiate pickup
         }
+    }
+    void Die() {
+        Instantiate(enemydeathparticlesPrefab, rb.position + Vector3.up * 0.5f, Quaternion.identity);
+        Drop();
+        Destroy(gameObject);
     }
 }
