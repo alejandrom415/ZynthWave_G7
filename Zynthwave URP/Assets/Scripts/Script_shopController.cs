@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Script_shopController : MonoBehaviour
 {
-    public GameObject healthBtn, speedBtn, accuracyBtn, firerateBtn, playerController, spawnerController, pauseMenu;
+    public GameObject healthBtn, speedBtn, accuracyBtn, firerateBtn, playerController, spawnerController;
     
     public GameObject healthImg;
 
@@ -14,7 +14,6 @@ public class Script_shopController : MonoBehaviour
 
     Script_Player_Controller player;
     Script_Enemy_Wave_Spawner spawner;
-    Script_PauseMenu pause;
 
     public static bool shopOpened;
     
@@ -24,7 +23,6 @@ public class Script_shopController : MonoBehaviour
         bullets = bullets.GetComponent<ParticleSystem>();
         player = playerController.GetComponent<Script_Player_Controller>();
         spawner = spawnerController.GetComponent<Script_Enemy_Wave_Spawner>();
-        pause = pauseMenu.GetComponent<Script_PauseMenu>();
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(healthBtn);
     }

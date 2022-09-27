@@ -70,11 +70,6 @@ public class Script_Player_Controller : MonoBehaviour
         // SetHeartsText();
     }
 
-    // void SetHeartsText()
-    // {
-    //     heartsText.text = "Hearts: " + text.ToString;
-    // }
-
     void Update()
     {
         if (isInvincible)
@@ -103,10 +98,7 @@ public class Script_Player_Controller : MonoBehaviour
         sh.arc = arc;
     }
 
-    public void TakeDamage()
-    {
-        healthBar.SetHealth(currentHearts);
-    }
+    public void TakeDamage() => healthBar.SetHealth(currentHearts);
 
     public void ChangeHearts(int amount)
     {
@@ -145,10 +137,6 @@ public class Script_Player_Controller : MonoBehaviour
         } else {
             Shoot(false);
         }
-        //if (startButton.triggered) {
-        //    SceneManager.LoadScene("MainMenu");
-        //}
-        //Debug.Log(lookDirection);
     }
 
     void Shoot(bool isShooting) {
@@ -188,12 +176,6 @@ public class Script_Player_Controller : MonoBehaviour
     {
         Time.timeScale = 0;
         gameoverPanel.SetActive(true);
-        
-
-        //Destroy(gameObject.GetComponent<Collider>());
-        //isInvincible = true;
-        //invincibleTimer = 9999;
-        //speed = 0;
     }
 
     public void ChangeHealthBuff()
@@ -203,34 +185,11 @@ public class Script_Player_Controller : MonoBehaviour
         healthBar.SetMaxHealth(maxHearts);
     }
 
-    public void ChangeSpeedBuff()
-    {
-        speed = speed + 1;
-    }
-
-    // public void SetROF()
-    // {
-    //     ParticleSystem.EmissionModule em = bullets.GetComponent<ParticleSystem>().emission;
-    //     em.rateOverTime = rateOverTime;
-    //     ChangeROF();
-    // }
+    public void ChangeSpeedBuff() => speed = speed + 1;
 
     public void ChangeROF() => rateOverTime = rateOverTime + 2;
-    // {
-    //     rateOverTime = rateOverTime + 2;
-    // }
-
-    // public void SetArc()
-    // {
-    //     ParticleSystem.ShapeModule sh = bullets.GetComponent<ParticleSystem>().shape;
-    //     sh.arc = arc;
-    //     ChangeArc();
-    // }
 
     public void ChangeArc() => arc = arc - 5;
-    // {
-    //     arc = arc - 5;
-    // }
 
     /*void CheckInput() {
         if (Input.GetKey(KeyCode.W)) {
