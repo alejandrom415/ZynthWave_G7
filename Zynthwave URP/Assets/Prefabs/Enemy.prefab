@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3773628378155981921}
   - component: {fileID: 8308133342123514678}
   - component: {fileID: 8021910449029908528}
+  - component: {fileID: 7334269475688288879}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -113,8 +114,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e6fe5adf7d5f480b9dcb7a682d93249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  navMeshAgent: {fileID: 7334269475688288879}
   healthPoints: 5
-  speed: 3
+  player: {fileID: 1759845413174272570, guid: 3a8e9eedb37a64f0199fafe016ad7e09, type: 3}
+  speed: 5
   enemydeathparticlesPrefab: {fileID: 6927076437262301292, guid: 62f3b05a9f45f43c18187ddfa011046e,
     type: 3}
 --- !u!54 &3773628378155981921
@@ -169,3 +172,25 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!195 &7334269475688288879
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8043561161643580772}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1.5
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4

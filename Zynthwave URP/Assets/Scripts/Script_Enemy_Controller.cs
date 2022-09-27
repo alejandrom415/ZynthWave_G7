@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Script_Enemy_Controller : MonoBehaviour
 {
+    //[SerializeField] private Transform playerTransform;
+    public NavMeshAgent navMeshAgent;
     public int healthPoints;
-    GameObject player; 
+    public GameObject player; 
     public float speed;
     public GameObject enemydeathparticlesPrefab;
     Rigidbody rb;
@@ -15,6 +18,13 @@ public class Script_Enemy_Controller : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         player = GameObject.Find("Player");
+
+        navMeshAgent = GetComponent<NavMeshAgent>();
+    }
+
+    void Awake()
+    {
+        
     }
 
     // Update is called once per frame
@@ -22,7 +32,11 @@ public class Script_Enemy_Controller : MonoBehaviour
     {
         var step =  speed * Time.deltaTime; // calculate distance to move
         
-        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, step);
+        //transform.position = Vector3.MoveTowards(transform.position, player.transform.position, step);
+
+        //navMeshAgent.destination = playerTransform.position;
+
+        navMeshAgent.SetDestination(player.transform.position);
     }
 
     void OnParticleCollision() 
