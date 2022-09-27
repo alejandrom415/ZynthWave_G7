@@ -14,23 +14,39 @@ public class Script_Menu_Manager : MonoBehaviour
     public void MainMenuOn() => mainMenu.SetActive(true);
     public void MainMenuOff() => mainMenu.SetActive(false);
     public void NoSelect() => EventSystem.current.SetSelectedGameObject(null);
+    public void ButtonsOut()
+    {
+        LeanTween.moveLocal(playBtn, new Vector3(-1200f, 120f, 0f), 0.3f).setEase(LeanTweenType.easeInCubic);
+        LeanTween.moveLocal(settingsBtn, new Vector3(-1200f, 20f, 0f), 0.3f).setEase(LeanTweenType.easeInCubic);
+        LeanTween.moveLocal(helpBtn, new Vector3(-1200f, -80f, 0f), 0.3f).setEase(LeanTweenType.easeInCubic);
+        LeanTween.moveLocal(creditsBtn, new Vector3(-1200f, -180f, 0f), 0.3f).setEase(LeanTweenType.easeInCubic);
+        LeanTween.moveLocal(quitBtn, new Vector3(-1200f, -280f, 0f), 0.3f).setEase(LeanTweenType.easeInCubic);
+    }
+    public void ButtonsIn()
+    {
+        LeanTween.moveLocal(playBtn, new Vector3(0f, 120f, 0f), 0.8f).setEase(LeanTweenType.easeOutElastic);
+        LeanTween.moveLocal(settingsBtn, new Vector3(0f, 20f, 0f), 0.8f).setEase(LeanTweenType.easeOutElastic);
+        LeanTween.moveLocal(helpBtn, new Vector3(0f, -80f, 0f), 0.8f).setEase(LeanTweenType.easeOutElastic);
+        LeanTween.moveLocal(creditsBtn, new Vector3(0f, -180f, 0f), 0.8f).setEase(LeanTweenType.easeOutElastic);
+        LeanTween.moveLocal(quitBtn, new Vector3(0f, -280f, 0f), 0.8f).setEase(LeanTweenType.easeOutElastic);
+    }
 
     void Start()
     {
-        LeanTween.moveLocal(groupImg, new Vector3(0f, 155f, 0f), 1f).setDelay(1f).setEase(LeanTweenType.easeOutBack);
-        LeanTween.moveLocal(groupImg, new Vector3(1400f, 155f, 0f), 1f).setDelay(3f).setEase(LeanTweenType.easeInBack);
+        LeanTween.moveLocal(groupImg, new Vector3(0f, 155f, 0f), 1f).setDelay(0.5f).setEase(LeanTweenType.easeOutBack);
+        LeanTween.moveLocal(groupImg, new Vector3(1400f, 155f, 0f), 1f).setDelay(2.5f).setEase(LeanTweenType.easeInBack);
 
-        LeanTween.scale(logoImg, new Vector3(1f, 1f, 1f), 1.5f).setDelay(4.5f).setEase(LeanTweenType.easeOutCubic);
-        LeanTween.moveLocal(logoImg, new Vector3(0f, 500f, 0f), 1f).setDelay(6.5f).setEase(LeanTweenType.easeInCubic);
-        LeanTween.scale(logoImg, new Vector3(0.6f, 0.6f, 0.6f), 1f).setDelay(6.5f).setEase(LeanTweenType.easeInCubic);
+        LeanTween.scale(logoImg, new Vector3(1f, 1f, 1f), 1.5f).setDelay(4f).setEase(LeanTweenType.easeOutCubic);
+        LeanTween.moveLocal(logoImg, new Vector3(0f, 500f, 0f), 1f).setDelay(6f).setEase(LeanTweenType.easeInCubic);
+        LeanTween.scale(logoImg, new Vector3(0.6f, 0.6f, 0.6f), 1f).setDelay(6f).setEase(LeanTweenType.easeInCubic);
 
-        LeanTween.alpha(splashscreenPanel.GetComponent<RectTransform>(), 0f, 3.5f).setDelay(6.6f);
+        LeanTween.alpha(splashscreenPanel.GetComponent<RectTransform>(), 0f, 3.5f).setDelay(6.1f);
 
-        LeanTween.moveLocal(playBtn, new Vector3(0f, 120f, 0f), 1.5f).setDelay(7.5f).setEase(LeanTweenType.easeOutElastic);
-        LeanTween.moveLocal(settingsBtn, new Vector3(0f, 20f, 0f), 1.5f).setDelay(7.8f).setEase(LeanTweenType.easeOutElastic);
-        LeanTween.moveLocal(helpBtn, new Vector3(0f, -80f, 0f), 1.5f).setDelay(8.1f).setEase(LeanTweenType.easeOutElastic);
-        LeanTween.moveLocal(creditsBtn, new Vector3(0f, -180f, 0f), 1.5f).setDelay(8.4f).setEase(LeanTweenType.easeOutElastic);
-        LeanTween.moveLocal(quitBtn, new Vector3(0f, -280f, 0f), 1.5f).setDelay(8.7f).setEase(LeanTweenType.easeOutElastic).setOnComplete(SplashScreenDone);   
+        LeanTween.moveLocal(playBtn, new Vector3(0f, 120f, 0f), 1.5f).setDelay(6.8f).setEase(LeanTweenType.easeOutElastic);
+        LeanTween.moveLocal(settingsBtn, new Vector3(0f, 20f, 0f), 1.5f).setDelay(7.1f).setEase(LeanTweenType.easeOutElastic);
+        LeanTween.moveLocal(helpBtn, new Vector3(0f, -80f, 0f), 1.5f).setDelay(7.4f).setEase(LeanTweenType.easeOutElastic);
+        LeanTween.moveLocal(creditsBtn, new Vector3(0f, -180f, 0f), 1.5f).setDelay(7.7f).setEase(LeanTweenType.easeOutElastic);
+        LeanTween.moveLocal(quitBtn, new Vector3(0f, -280f, 0f), 1.5f).setDelay(8f).setEase(LeanTweenType.easeOutElastic).setOnComplete(SplashScreenDone);   
     }
 
     void SplashScreenDone()
@@ -44,7 +60,8 @@ public class Script_Menu_Manager : MonoBehaviour
 
     public void OpenSettings()
     {
-        MainMenuOff();
+        ButtonsOut();
+        //MainMenuOff();
         settingsMenu.SetActive(true);
         NoSelect();
         EventSystem.current.SetSelectedGameObject(settingsBackBtn);
@@ -52,7 +69,8 @@ public class Script_Menu_Manager : MonoBehaviour
 
     public void CloseSettings()
     {
-        MainMenuOn();
+        ButtonsIn();
+        //MainMenuOn();
         settingsMenu.SetActive(false);
         NoSelect();
         EventSystem.current.SetSelectedGameObject(settingsBtn);
