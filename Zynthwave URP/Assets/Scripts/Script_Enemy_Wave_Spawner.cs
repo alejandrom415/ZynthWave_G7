@@ -96,10 +96,11 @@ public class Script_Enemy_Wave_Spawner : MonoBehaviour
 
         waveCountdown = timeBetweenWaves;
 
-        waveEndImg.SetActive(true);
-        shopBackground.SetActive(true);
-        LeanTween.moveLocal(shopBackground, new Vector3(0f, 0f, 0f), 1f).setEase(LeanTweenType.easeOutCirc).setOnComplete(FreezeGame);
         player.startButton.Disable();
+
+        LeanTween.moveLocal(waveEndImg, new Vector3(300f, -360f, 0f), 2f).setEase(LeanTweenType.easeOutCubic);
+        LeanTween.moveLocal(waveEndImg, new Vector3(-1480f, -360f, 0f), 1f).setDelay(2f).setEase(LeanTweenType.easeInCubic);
+        LeanTween.alpha(waveEndImg.GetComponent<RectTransform>(), 0f, 1f).setDelay(2f).setOnComplete(OpenTheShop);
 
         if (nextWave + 1 > waves.Length - 1)
         {
@@ -112,6 +113,14 @@ public class Script_Enemy_Wave_Spawner : MonoBehaviour
         {
             nextWave++;
         }
+    }
+
+    void OpenTheShop()
+    {
+        LeanTween.moveLocal(waveEndImg, new Vector3(1480f, -360f, 0f), 0.2f).setEase(LeanTweenType.easeInCubic);
+        LeanTween.alpha(waveEndImg.GetComponent<RectTransform>(), 1f, 0.1f).setDelay(0.4f);
+        shopBackground.SetActive(true);
+        LeanTween.moveLocal(shopBackground, new Vector3(0f, 0f, 0f), 1f).setEase(LeanTweenType.easeOutCirc).setOnComplete(FreezeGame);
     }
 
     void FreezeGame()
@@ -167,8 +176,7 @@ public class Script_Enemy_Wave_Spawner : MonoBehaviour
     {
         player.startButton.Enable();
         shopBackground.SetActive(false);
-        waveEndImg.SetActive(false);
-        waveCountdown = 1;
+        waveCountdown = 3;
         return;
     }
 }
