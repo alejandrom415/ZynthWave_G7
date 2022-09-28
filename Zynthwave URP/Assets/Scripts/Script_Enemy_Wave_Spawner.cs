@@ -68,7 +68,9 @@ public class Script_Enemy_Wave_Spawner : MonoBehaviour
             if (state != SpawnState.SPAWNING)
             {
                 StartCoroutine( SpawnWave ( waves[nextWave] ) );
-                waveStartImg.SetActive(true);
+                LeanTween.moveLocal(waveStartImg, new Vector3(-300f, -300f, 0f), 2f).setEase(LeanTweenType.easeOutCubic);
+                LeanTween.moveLocal(waveStartImg, new Vector3(1400f, -300f, 0f), 1f).setDelay(2f).setEase(LeanTweenType.easeInCubic);
+                LeanTween.alpha(waveStartImg.GetComponent<RectTransform>(), 0f, 1f).setDelay(2f).setOnComplete(ResetWaveStart);
             }
         }
 
@@ -80,6 +82,12 @@ public class Script_Enemy_Wave_Spawner : MonoBehaviour
         //transform.Rotate (new Vector3 (0,15,0) * Time.deltaTime);
     }
 
+    void ResetWaveStart()
+    {
+        LeanTween.moveLocal(waveStartImg, new Vector3(-1420f, -300f, 0f), 0.2f).setEase(LeanTweenType.easeInCubic);
+        LeanTween.alpha(waveStartImg.GetComponent<RectTransform>(), 1f, 0.1f).setDelay(0.4f);
+    }
+
     void WaveCompleted()
     {
         Debug.Log ("WAVE COMPLETED");
@@ -88,11 +96,10 @@ public class Script_Enemy_Wave_Spawner : MonoBehaviour
 
         waveCountdown = timeBetweenWaves;
 
-        waveStartImg.SetActive(false);
         waveEndImg.SetActive(true);
         shopBackground.SetActive(true);
+        LeanTween.moveLocal(shopBackground, new Vector3(0f, 0f, 0f), 1f).setEase(LeanTweenType.easeOutCirc).setOnComplete(FreezeGame);
         player.startButton.Disable();
-        Time.timeScale = 0;
 
         if (nextWave + 1 > waves.Length - 1)
         {
@@ -105,6 +112,11 @@ public class Script_Enemy_Wave_Spawner : MonoBehaviour
         {
             nextWave++;
         }
+    }
+
+    void FreezeGame()
+    {
+        Time.timeScale = 0;
     }
 
     bool EnemyIsAlive()
@@ -155,7 +167,6 @@ public class Script_Enemy_Wave_Spawner : MonoBehaviour
     {
         player.startButton.Enable();
         shopBackground.SetActive(false);
-        Time.timeScale = 1;
         waveEndImg.SetActive(false);
         waveCountdown = 1;
         return;

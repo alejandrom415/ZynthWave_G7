@@ -103,12 +103,14 @@ public class Script_Menu_Manager : MonoBehaviour
     {
         ButtonsOut();
         LeanTween.alpha(splashscreenPanel.GetComponent<RectTransform>(), 0.9f, 1f).setDelay(0.2f);
-        LeanTween.moveLocal(creditsBackBtn, new Vector3(-800f, -450f, 0f), 0.8f).setDelay(0.5f).setEase(LeanTweenType.easeOutElastic);
-
         LeanTween.scale(firstRow, new Vector3(1f, 1f, 1f), 1.5f).setDelay(0.4f).setEase(LeanTweenType.easeOutCubic);
         LeanTween.scale(secondRow, new Vector3(1f, 1f, 1f), 1.5f).setDelay(0.6f).setEase(LeanTweenType.easeOutCubic);
-        LeanTween.scale(thirdRow, new Vector3(1f, 1f, 1f), 1.5f).setDelay(0.8f).setEase(LeanTweenType.easeOutCubic);
+        LeanTween.scale(thirdRow, new Vector3(1f, 1f, 1f), 1.5f).setDelay(0.8f).setEase(LeanTweenType.easeOutCubic).setOnComplete(CreditsOpened);
+    }
 
+    void CreditsOpened()
+    {
+        LeanTween.moveLocal(creditsBackBtn, new Vector3(-800f, -450f, 0f), 0.8f).setDelay(0.2f).setEase(LeanTweenType.easeOutElastic);
         NoSelect();
         EventSystem.current.SetSelectedGameObject(creditsBackBtn);
     }
@@ -119,9 +121,9 @@ public class Script_Menu_Manager : MonoBehaviour
         LeanTween.alpha(splashscreenPanel.GetComponent<RectTransform>(), 0f, 1f).setDelay(0.2f);
         LeanTween.moveLocal(creditsBackBtn, new Vector3(-1110f, -450f, 0f), 0.3f).setEase(LeanTweenType.easeInCubic);
 
-        LeanTween.scale(firstRow, new Vector3(1f, 0f, 1f), 0.7f).setEase(LeanTweenType.easeInCubic);
-        LeanTween.scale(secondRow, new Vector3(1f, 0f, 1f), 0.5f).setEase(LeanTweenType.easeInCubic);
-        LeanTween.scale(thirdRow, new Vector3(1f, 0f, 1f), 0.3f).setEase(LeanTweenType.easeInCubic);
+        LeanTween.scale(firstRow, new Vector3(1f, 0f, 1f), 0.6f).setEase(LeanTweenType.easeInCubic);
+        LeanTween.scale(secondRow, new Vector3(1f, 0f, 1f), 0.4f).setEase(LeanTweenType.easeInCubic);
+        LeanTween.scale(thirdRow, new Vector3(1f, 0f, 1f), 0.2f).setEase(LeanTweenType.easeInCubic);
 
         ButtonsIn();
         NoSelect();
