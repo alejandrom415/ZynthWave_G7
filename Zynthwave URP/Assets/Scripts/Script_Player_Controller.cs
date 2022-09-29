@@ -16,6 +16,8 @@ public class Script_Player_Controller : MonoBehaviour
     public InputAction leftStick;
     public InputAction rightStick;
     public InputAction startButton;
+    public InputAction rightBumper;
+    public GameObject sonicBoom;
     
     public ParticleSystem bullets;
     public float rateOverTime;
@@ -43,11 +45,13 @@ public class Script_Player_Controller : MonoBehaviour
         leftStick.Enable();
         rightStick.Enable();
         startButton.Enable();
+        rightBumper.Enable();
     }
     void OnDisable() {
         leftStick.Disable();
         rightStick.Disable();
         startButton.Disable();
+        rightBumper.Disable();
     }
 
     // Start is called before the first frame update
@@ -83,6 +87,10 @@ public class Script_Player_Controller : MonoBehaviour
         if (Input.GetKey("escape"))
         {
             SceneManager.LoadScene("MainMenu");
+        }
+
+        if (rightBumper.triggered) {
+            sonicBoom.SetActive(true);
         }
 
         if (startButton.triggered) 
@@ -131,7 +139,11 @@ public class Script_Player_Controller : MonoBehaviour
         
         rb.velocity = new Vector3(direction.x*speed, 0, direction.y*speed);
         Vector3 lookVector = new Vector3(lookDirection.x, 0, lookDirection.y);
-        transform.rotation = Quaternion.LookRotation(lookVector);
+
+        if (lookVector != Vector3.zero) {
+            transform.rotation = Quaternion.LookRotation(lookVector);
+        }
+        
         if (lookDirection.x > 0.8 || lookDirection.x < -0.8 || lookDirection.y > 0.8 || lookDirection.y < -0.8) {
             Shoot(true);
         } else {

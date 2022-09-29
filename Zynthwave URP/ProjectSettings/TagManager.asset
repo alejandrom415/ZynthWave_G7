@@ -7,11 +7,12 @@ TagManager:
   - Enemy
   - Speed
   - Hearts
+  - blast
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Enemy
   - Water
   - UI
   - 

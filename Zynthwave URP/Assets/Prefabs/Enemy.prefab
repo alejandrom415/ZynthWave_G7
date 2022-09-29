@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8308133342123514678}
   - component: {fileID: 8021910449029908528}
   - component: {fileID: 7334269475688288879}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -120,6 +120,10 @@ MonoBehaviour:
   speed: 5
   enemydeathparticlesPrefab: {fileID: 6927076437262301292, guid: 62f3b05a9f45f43c18187ddfa011046e,
     type: 3}
+  dropRate: 0.5
+  drops:
+  - {fileID: 1960321197901416269, guid: 41977dce7aab943d68a8cd3a52f6e03f, type: 3}
+  - {fileID: 4693965706881244025, guid: 92122bd91ade14c99931b5652494b0e4, type: 3}
 --- !u!54 &3773628378155981921
 Rigidbody:
   m_ObjectHideFlags: 0

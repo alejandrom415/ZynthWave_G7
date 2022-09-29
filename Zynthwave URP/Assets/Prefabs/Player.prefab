@@ -36,6 +36,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8064017957102055410}
+  - {fileID: 4317435930131094653}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -231,13 +232,26 @@ MonoBehaviour:
       m_Action: Start Button
       m_Flags: 0
     m_Flags: 0
+  rightBumper:
+    m_Name: Right Bumper
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 01907d1a-102f-4042-9b9b-5758a03a73af
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  sonicBoom: {fileID: 0}
   bullets: {fileID: 6353966656520719547}
-  gameOverText: {fileID: 0}
+  rateOverTime: 0
+  arc: 0
   maxHearts: 5
-  minHearts: 0
   currentHearts: 0
   timeInvincible: 0
   healthBar: {fileID: 0}
+  gameoverPanel: {fileID: 0}
+  pauseMenu: {fileID: 0}
+  shopBackground: {fileID: 0}
 --- !u!54 &67986669
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -290,6 +304,66 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!1 &8401972869358043989
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4317435930131094653}
+  - component: {fileID: 1888692877572734748}
+  - component: {fileID: 3460959964935164536}
+  m_Layer: 1
+  m_Name: Sonic blast
+  m_TagString: blast
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &4317435930131094653
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8401972869358043989}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1759845413174272550}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1888692877572734748
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8401972869358043989}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.00001
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3460959964935164536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8401972869358043989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bedb8fe98c06bae44bf35c36b139f8de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blastRadius: 10
+  lerpDuration: 2
 --- !u!1001 &6770884490106504474
 PrefabInstance:
   m_ObjectHideFlags: 0

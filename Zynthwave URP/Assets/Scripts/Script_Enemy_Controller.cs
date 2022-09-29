@@ -12,6 +12,9 @@ public class Script_Enemy_Controller : MonoBehaviour
     public float speed;
     public GameObject enemydeathparticlesPrefab;
     Rigidbody rb;
+    [Range(0f, 1f)]
+    public float dropRate;
+    public List<GameObject> drops;
 
     void Start()
     {
@@ -47,9 +50,13 @@ public class Script_Enemy_Controller : MonoBehaviour
         
         if (healthPoints <= 0) 
         {
-            Instantiate(enemydeathparticlesPrefab, rb.position + Vector3.up * 0.5f, Quaternion.identity);
-            
-            Destroy(gameObject);
+            Die();
+        }
+    }
+
+    void OnTriggerEnter(Collider other) {
+        if (other.gameObject.tag == "blast") {
+            Die();
         }
     }
 
@@ -68,5 +75,20 @@ public class Script_Enemy_Controller : MonoBehaviour
             player.GameOver();
         }
 
+    }
+    
+    void Drop() {
+        float roll;
+        roll = Random.Range(0f,1f);
+        Debug.Log(roll);
+        if (roll < dropRate) {
+            Instantiate(drops[Random.Range(0,drops.Count-1)], transform.position, transform.rotation);
+        }
+    }
+
+    void Die() {
+        Instantiate(enemydeathparticlesPrefab, rb.position + Vector3.up * 0.5f, Quaternion.identity);
+        Drop();
+        Destroy(gameObject);
     }
 }
