@@ -117,7 +117,7 @@ public class Script_Enemy_Wave_Spawner : MonoBehaviour
 
     void OpenTheShop()
     {
-        LeanTween.moveLocal(waveEndImg, new Vector3(1480f, -360f, 0f), 0.2f).setEase(LeanTweenType.easeInCubic);
+        LeanTween.moveLocal(waveEndImg, new Vector3(1520f, -360f, 0f), 0.2f).setEase(LeanTweenType.easeInCubic);
         LeanTween.alpha(waveEndImg.GetComponent<RectTransform>(), 1f, 0.1f).setDelay(0.4f);
         shopBackground.SetActive(true);
         LeanTween.moveLocal(shopBackground, new Vector3(0f, 0f, 0f), 1f).setEase(LeanTweenType.easeOutCirc).setOnComplete(FreezeGame);

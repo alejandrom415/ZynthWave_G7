@@ -318,7 +318,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: -30}
-  m_SizeDelta: {x: 576.7508, y: 60.1491}
+  m_SizeDelta: {x: 500, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &171136478
 MonoBehaviour:
@@ -2304,9 +2304,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9339623, g: 0.35505807, b: 0.3039783, a: 1}
-    m_PressedColor: {r: 0.8773585, g: 0.24248628, b: 0.18623178, a: 1}
-    m_SelectedColor: {r: 0.9333334, g: 0.35686275, b: 0.30588236, a: 1}
+    m_HighlightedColor: {r: 0.9622642, g: 0.32226774, b: 0.36773196, a: 1}
+    m_PressedColor: {r: 0.8490566, g: 0.13216448, b: 0.18278153, a: 1}
+    m_SelectedColor: {r: 0.9607844, g: 0.32156864, b: 0.36862746, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -3192,7 +3192,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: -30}
-  m_SizeDelta: {x: 630.8906, y: 64.6262}
+  m_SizeDelta: {x: 485, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1533683731
 MonoBehaviour:
@@ -3214,7 +3214,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Increase your overall Fire Rate
+  m_text: Increase your Fire Rate
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c2ad9b872d67c4b42a641527c895ca1e, type: 2}
   m_sharedMaterial: {fileID: 2859298661135592550, guid: c2ad9b872d67c4b42a641527c895ca1e,
@@ -3328,7 +3328,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: -30}
-  m_SizeDelta: {x: 576.7508, y: 60.1491}
+  m_SizeDelta: {x: 440, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1598747225
 MonoBehaviour:
@@ -3350,7 +3350,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Increase your overall Speed
+  m_text: Increase your Speed
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c2ad9b872d67c4b42a641527c895ca1e, type: 2}
   m_sharedMaterial: {fileID: 2859298661135592550, guid: c2ad9b872d67c4b42a641527c895ca1e,
@@ -3655,7 +3655,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: -30}
-  m_SizeDelta: {x: 576.7508, y: 60.1491}
+  m_SizeDelta: {x: 440, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1683939743
 MonoBehaviour:
@@ -3677,7 +3677,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Increase your overall Health
+  m_text: Increase your Health
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c2ad9b872d67c4b42a641527c895ca1e, type: 2}
   m_sharedMaterial: {fileID: 2859298661135592550, guid: c2ad9b872d67c4b42a641527c895ca1e,
@@ -4288,7 +4288,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1480, y: -360}
+  m_AnchoredPosition: {x: 1520, y: -360}
   m_SizeDelta: {x: 1110, y: 320}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1875725318
