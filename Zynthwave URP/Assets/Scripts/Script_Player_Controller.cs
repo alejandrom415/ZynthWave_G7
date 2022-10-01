@@ -35,7 +35,14 @@ public class Script_Player_Controller : MonoBehaviour
     public float timeInvincible = 2.0f;
     bool isInvincible;
     float invincibleTimer;
+
+    public int XP { get {return currentXP; } }
+    public int currentXP;
+    public int maxXP = 100;
+
+
     public Script_Health_Bar healthBar;
+    public Script_Sonic_Bar sonicBar;
     //public Script_GameOver gameoverScreen;
     public GameObject gameoverPanel, pauseMenu;
     public Script_shopController shopBackground;
@@ -62,6 +69,9 @@ public class Script_Player_Controller : MonoBehaviour
 
         currentHearts = maxHearts;
         healthBar.SetMaxHealth(maxHearts);
+
+        currentXP = 0;
+        sonicBar.SetXP(currentXP);
 
         speed = 5;
 

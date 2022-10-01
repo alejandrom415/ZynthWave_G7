@@ -17,19 +17,19 @@ public class Script_Menu_Manager : MonoBehaviour
     public void NoSelect() => EventSystem.current.SetSelectedGameObject(null);
     public void ButtonsOut()
     {
-        LeanTween.moveLocal(playBtn, new Vector3(-1200f, 120f, 0f), 0.3f).setEase(LeanTweenType.easeInCubic);
+        LeanTween.moveLocal(playBtn, new Vector3(-1200f, 120f, 0f), 0.2f).setEase(LeanTweenType.easeInCubic);
         LeanTween.moveLocal(settingsBtn, new Vector3(-1200f, 20f, 0f), 0.3f).setEase(LeanTweenType.easeInCubic);
-        LeanTween.moveLocal(helpBtn, new Vector3(-1200f, -80f, 0f), 0.3f).setEase(LeanTweenType.easeInCubic);
-        LeanTween.moveLocal(creditsBtn, new Vector3(-1200f, -180f, 0f), 0.3f).setEase(LeanTweenType.easeInCubic);
-        LeanTween.moveLocal(quitBtn, new Vector3(-1200f, -280f, 0f), 0.3f).setEase(LeanTweenType.easeInCubic);
+        LeanTween.moveLocal(helpBtn, new Vector3(-1200f, -80f, 0f), 0.4f).setEase(LeanTweenType.easeInCubic);
+        LeanTween.moveLocal(creditsBtn, new Vector3(-1200f, -180f, 0f), 0.5f).setEase(LeanTweenType.easeInCubic);
+        LeanTween.moveLocal(quitBtn, new Vector3(-1200f, -280f, 0f), 0.6f).setEase(LeanTweenType.easeInCubic);
     }
     public void ButtonsIn()
     {
-        LeanTween.moveLocal(playBtn, new Vector3(0f, 120f, 0f), 0.8f).setDelay(0.6f).setEase(LeanTweenType.easeOutElastic);
-        LeanTween.moveLocal(settingsBtn, new Vector3(0f, 20f, 0f), 0.8f).setDelay(0.6f).setEase(LeanTweenType.easeOutElastic);
-        LeanTween.moveLocal(helpBtn, new Vector3(0f, -80f, 0f), 0.8f).setDelay(0.6f).setEase(LeanTweenType.easeOutElastic);
-        LeanTween.moveLocal(creditsBtn, new Vector3(0f, -180f, 0f), 0.8f).setDelay(0.6f).setEase(LeanTweenType.easeOutElastic);
-        LeanTween.moveLocal(quitBtn, new Vector3(0f, -280f, 0f), 0.8f).setDelay(0.6f).setEase(LeanTweenType.easeOutElastic);
+        LeanTween.moveLocal(playBtn, new Vector3(0f, 120f, 0f), 0.2f).setDelay(0.6f).setEase(LeanTweenType.easeOutCubic);
+        LeanTween.moveLocal(settingsBtn, new Vector3(0f, 20f, 0f), 0.3f).setDelay(0.6f).setEase(LeanTweenType.easeOutCubic);
+        LeanTween.moveLocal(helpBtn, new Vector3(0f, -80f, 0f), 0.4f).setDelay(0.6f).setEase(LeanTweenType.easeOutCubic);
+        LeanTween.moveLocal(creditsBtn, new Vector3(0f, -180f, 0f), 0.5f).setDelay(0.6f).setEase(LeanTweenType.easeOutCubic);
+        LeanTween.moveLocal(quitBtn, new Vector3(0f, -280f, 0f), 0.6f).setDelay(0.6f).setEase(LeanTweenType.easeOutCubic);
     }
 
     void Start()
