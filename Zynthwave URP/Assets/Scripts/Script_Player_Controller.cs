@@ -36,6 +36,10 @@ public class Script_Player_Controller : MonoBehaviour
     bool isInvincible;
     float invincibleTimer;
 
+    public float timeSpeed = 10f;
+    bool isSpeeding;
+    public float speedTimer;
+
     public int XP { get {return currentXP; } }
     public int currentXP;
     public int maxXP = 100;
@@ -94,14 +98,37 @@ public class Script_Player_Controller : MonoBehaviour
                 //Debug.Log ("NOT INVINCIBLE");
         }
 
+        if (isSpeeding)
+        {
+            speedTimer -= Time.deltaTime;
+            if (speedTimer < 0)
+            {
+                speed = speed / 2;
+                isSpeeding = false;
+            }
+        }
+
         if (Input.GetKey("escape"))
         {
             SceneManager.LoadScene("MainMenu");
         }
 
-        if (rightBumper.triggered) {
-            sonicBoom.SetActive(true);
+        if (currentXP == maxXP)
+        {
+            if (rightBumper.triggered) 
+            {
+                sonicBoom.SetActive(true);
+            }
         }
+
+        else if (currentXP < maxXP)
+        {
+            if (rightBumper.triggered)
+            {
+                sonicBoom.SetActive(false);
+            }
+        }
+        
 
         if (startButton.triggered) 
         {
@@ -134,6 +161,30 @@ public class Script_Player_Controller : MonoBehaviour
         currentHearts = Mathf.Clamp(currentHearts + amount, 0, maxHearts);
         //UIHearts.instance.SetValue(currentHearts / (float)maxHearts);
     }
+
+    public void ChangeXP(int xpAmount)
+    {
+        // if (xpAmount < 0)
+        // {
+        //     if (isInvincible)
+        //         return;
+
+        //     isInvincible = true;
+        //     invincibleTimer = timeInvincible;
+
+        //     Debug.Log ("INVINCIBLE");
+        // }
+
+        currentXP = Mathf.Clamp(currentXP + xpAmount, 0, maxXP);
+        //sonicBar.SetXP(currentXP);
+    }
+
+    public void GainedXP()
+    {
+        sonicBar.SetXP(currentXP);
+    }
+
+    
 
 
     // Update is called once per frame
@@ -172,25 +223,28 @@ public class Script_Player_Controller : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-        if (collider.tag == "Hearts")
-        {
-            if (hearts < maxHearts)
-            {
-                currentHearts = currentHearts + 1;
+        // if (collider.tag == "Hearts")
+        // {
+        //     if (hearts < maxHearts)
+        //     {
+        //         currentHearts = currentHearts + 1;
 
-                Debug.Log("HEARTS COLLECTED");
+        //         Debug.Log("HEARTS COLLECTED");
 
-                Destroy(collider.gameObject);
-            }
-        }
+        //         Destroy(collider.gameObject);
+        //     }
+        // }
 
         if (collider.tag == "Speed")
         {
+            isSpeeding = true;
+            speedTimer = timeSpeed;
             speed = speed * 2;
 
             Debug.Log("SPEED BOOST");
 
             Destroy(collider.gameObject);
+
         }
     }
 

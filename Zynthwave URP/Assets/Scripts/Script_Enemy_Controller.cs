@@ -8,19 +8,24 @@ public class Script_Enemy_Controller : MonoBehaviour
     //[SerializeField] private Transform playerTransform;
     public NavMeshAgent navMeshAgent;
     public int healthPoints;
-    public GameObject player; 
+    public GameObject player;
+    //public GameObject playerController;
     public float speed;
     public GameObject enemydeathparticlesPrefab;
     Rigidbody rb;
     [Range(0f, 1f)]
     public float dropRate;
     public List<GameObject> drops;
+    //public Script_Player_Controller Player;
+
 
     void Start()
     {
+        //Player = playerController.GetComponent<Script_Player_Controller>();
         rb = GetComponent<Rigidbody>();
 
         player = GameObject.Find("Player");
+        //player = gameObject.GetComponent<Script_Player_Controller>();
 
         navMeshAgent = GetComponent<NavMeshAgent>();
     }
@@ -44,6 +49,8 @@ public class Script_Enemy_Controller : MonoBehaviour
 
     void OnParticleCollision() 
     {
+        //player.ChangeXP(+10);
+        //player.GainedXP();
         Debug.Log("Ouch!");
         
         healthPoints--;
@@ -55,10 +62,12 @@ public class Script_Enemy_Controller : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other) {
+
         if (other.gameObject.tag == "blast") {
             Die();
         }
     }
+
 
     void OnCollisionEnter(Collision other)
     {
@@ -67,7 +76,9 @@ public class Script_Enemy_Controller : MonoBehaviour
         if (player != null)
         {
             player.ChangeHearts(-1);
+            player.ChangeXP(+10);
             player.TakeDamage();
+            player.GainedXP();
         }
 
         if (player != null && player.currentHearts < 1)
@@ -87,6 +98,10 @@ public class Script_Enemy_Controller : MonoBehaviour
     }
 
     void Die() {
+        // Script_Player_Controller player = player.GetComponent<Script_Player_Controller>();
+        // Player.ChangeXP(+10);
+        // Player.GainedXP();
+
         Instantiate(enemydeathparticlesPrefab, rb.position + Vector3.up * 0.5f, Quaternion.identity);
         Drop();
         Destroy(gameObject);

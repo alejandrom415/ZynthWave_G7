@@ -234,21 +234,32 @@ MonoBehaviour:
     m_Flags: 0
   rightBumper:
     m_Name: Right Bumper
-    m_Type: 0
-    m_ExpectedControlType: 
+    m_Type: 1
+    m_ExpectedControlType: Button
     m_Id: 01907d1a-102f-4042-9b9b-5758a03a73af
     m_Processors: 
     m_Interactions: 
-    m_SingletonActionBindings: []
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 415705a5-b7c5-4f0c-88ac-ab439050cfb6
+      m_Path: <Gamepad>/rightShoulder
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Right Bumper
+      m_Flags: 0
     m_Flags: 0
-  sonicBoom: {fileID: 0}
+  sonicBoom: {fileID: 8401972869358043989}
   bullets: {fileID: 6353966656520719547}
   rateOverTime: 0
   arc: 0
   maxHearts: 5
   currentHearts: 0
-  timeInvincible: 0
+  timeInvincible: 2
+  currentXP: 100
+  maxXP: 100
   healthBar: {fileID: 0}
+  sonicBar: {fileID: 0}
   gameoverPanel: {fileID: 0}
   pauseMenu: {fileID: 0}
   shopBackground: {fileID: 0}
@@ -299,7 +310,9 @@ Animation:
   serializedVersion: 3
   m_Animation: {fileID: -203655887218126122, guid: e1f4f69e63268184588c056f577ae34d,
     type: 3}
-  m_Animations: []
+  m_Animations:
+  - {fileID: -203655887218126122, guid: 086ab5bbd379e4be7bd18f78d8836f13, type: 3}
+  - {fileID: -203655887218126122, guid: e1f4f69e63268184588c056f577ae34d, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -362,7 +375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bedb8fe98c06bae44bf35c36b139f8de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blastRadius: 10
+  blastRadius: 5
   lerpDuration: 2
 --- !u!1001 &6770884490106504474
 PrefabInstance:
@@ -431,7 +444,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Projectile area
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5785100080654940505, guid: 6ee907934ada6404a927a38f77383aed, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6ee907934ada6404a927a38f77383aed, type: 3}
 --- !u!198 &6353966656520719547 stripped
 ParticleSystem:
