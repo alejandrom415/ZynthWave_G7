@@ -8,6 +8,10 @@ TagManager:
   - Speed
   - Hearts
   - blast
+  - Invincible
+  - Ability
+  - Heal
+  - DoubleTap
   layers:
   - Default
   - TransparentFX

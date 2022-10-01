@@ -36,9 +36,15 @@ public class Script_Player_Controller : MonoBehaviour
     bool isInvincible;
     float invincibleTimer;
 
-    public float timeSpeed = 10f;
+    //public float timeSpeed = 10f;
     bool isSpeeding;
     public float speedTimer;
+
+    //public float timeDoubleRoF = 10f;
+    bool isDoubleRoF;
+    public float doubleRoFTimer;
+
+    public float timePowered = 10f;
 
     public int XP { get {return currentXP; } }
     public int currentXP;
@@ -93,18 +99,34 @@ public class Script_Player_Controller : MonoBehaviour
         if (isInvincible)
         {
             invincibleTimer -= Time.deltaTime;
+            
             if (invincibleTimer < 0)
+            {
                 isInvincible = false;
-                //Debug.Log ("NOT INVINCIBLE");
+            }
         }
 
         if (isSpeeding)
         {
             speedTimer -= Time.deltaTime;
+            
             if (speedTimer < 0)
             {
                 speed = speed / 2;
+                
                 isSpeeding = false;
+            }
+        }
+
+        if(isDoubleRoF)
+        {
+            doubleRoFTimer -= Time.deltaTime;
+            
+            if (doubleRoFTimer < 0)
+            {
+                rateOverTime = rateOverTime / 2;
+                
+                isDoubleRoF = false;
             }
         }
 
@@ -118,6 +140,10 @@ public class Script_Player_Controller : MonoBehaviour
             if (rightBumper.triggered) 
             {
                 sonicBoom.SetActive(true);
+
+                currentXP = 0;
+
+                sonicBar.SetXP(currentXP);
             }
         }
 
@@ -184,9 +210,6 @@ public class Script_Player_Controller : MonoBehaviour
         sonicBar.SetXP(currentXP);
     }
 
-    
-
-
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -238,13 +261,60 @@ public class Script_Player_Controller : MonoBehaviour
         if (collider.tag == "Speed")
         {
             isSpeeding = true;
-            speedTimer = timeSpeed;
+            
+            speedTimer = timePowered;
+            
             speed = speed * 2;
 
             Debug.Log("SPEED BOOST");
 
             Destroy(collider.gameObject);
+        }
 
+        if (collider.tag == "DoubleTap")
+        {
+            isDoubleRoF = true;
+            
+            doubleRoFTimer = timePowered;
+            
+            rateOverTime = rateOverTime * 2;
+
+            Debug.Log("DOUBLE TAP");
+
+            Destroy(collider.gameObject);
+        }
+
+        if (collider.tag == "Invincible")
+        {
+            isInvincible = true;
+            
+            invincibleTimer = timePowered;
+
+            Debug.Log("INVINCIBLE");
+
+            Destroy(collider.gameObject);
+        }
+
+        if (collider.tag == "Ability")
+        {
+            currentXP = maxXP;
+
+            sonicBar.SetXP(currentXP);
+
+            Debug.Log("ABILITY REFRESH");
+
+            Destroy(collider.gameObject);
+        }
+
+        if (collider.tag == "Heal")
+        {
+            currentHearts = maxHearts;
+
+            healthBar.SetMaxHealth(maxHearts);
+
+            Debug.Log("MAX HEARTS");
+
+            Destroy(collider.gameObject);
         }
     }
 
