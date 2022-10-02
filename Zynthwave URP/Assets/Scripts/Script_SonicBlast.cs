@@ -7,6 +7,7 @@ public class Script_SonicBlast : MonoBehaviour
     SphereCollider collider;
     public float blastRadius;
     public float lerpDuration;
+    public GameObject blastVisual;
 
     void OnEnable() {
         collider = GetComponent<SphereCollider>();
@@ -19,10 +20,12 @@ public class Script_SonicBlast : MonoBehaviour
         while (timeElapsed < lerpDuration)
         {
             collider.radius = Mathf.Lerp(0f, blastRadius, timeElapsed / lerpDuration);
+            blastVisual.transform.localScale = new Vector3(collider.radius*2,collider.radius*2,collider.radius*2);
             timeElapsed += Time.deltaTime;
             yield return null;
         }
         collider.radius = 0;
+        blastVisual.transform.localScale = Vector3.zero;
         yield return null;
         gameObject.SetActive(false);
     }
