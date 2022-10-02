@@ -33,18 +33,17 @@ public class Script_Player_Controller : MonoBehaviour
     public int hearts { get { return currentHearts; } }
     public int currentHearts;
     public float timeInvincible = 2.0f;
+    public float timePowered = 10f;
     bool isInvincible;
     float invincibleTimer;
 
-    //public float timeSpeed = 10f;
+    public float timeSpeed = 10f;
     bool isSpeeding;
     public float speedTimer;
 
-    //public float timeDoubleRoF = 10f;
+    public float timeDoubleRoF = 10f;
     bool isDoubleRoF;
     public float doubleRoFTimer;
-
-    public float timePowered = 10f;
 
     public int XP { get {return currentXP; } }
     public int currentXP;
@@ -54,7 +53,8 @@ public class Script_Player_Controller : MonoBehaviour
     public Script_Health_Bar healthBar;
     public Script_Sonic_Bar sonicBar;
     //public Script_GameOver gameoverScreen;
-    public GameObject gameoverPanel, pauseMenu;
+    public GameObject gameoverPanel, pauseMenu, healthTokenPop, speedTokenPop, rofTokenPop, invincibleTokenPop, sonicTokenPop;
+    //Script_GameUI gameUI;
     public Script_shopController shopBackground;
 
     //set up controller
@@ -77,17 +77,19 @@ public class Script_Player_Controller : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         bullets = bullets.GetComponent<ParticleSystem>();
 
+        //gameUI = InGameUI.GetComponent<Script_GameUI>();
+
         currentHearts = maxHearts;
         healthBar.SetMaxHealth(maxHearts);
 
         currentXP = 0;
         sonicBar.SetXP(currentXP);
 
-        speed = 5;
+        speed = 3;
 
-        arc = 45;
+        arc = 50;
 
-        rateOverTime = 10;
+        rateOverTime = 6;
 
         //gameOverText.text = "";
         // hearts = 4;
@@ -112,7 +114,7 @@ public class Script_Player_Controller : MonoBehaviour
             
             if (speedTimer < 0)
             {
-                speed = speed / 2;
+                speed = speed - 3;
                 
                 isSpeeding = false;
             }
@@ -124,7 +126,7 @@ public class Script_Player_Controller : MonoBehaviour
             
             if (doubleRoFTimer < 0)
             {
-                rateOverTime = rateOverTime / 2;
+                rateOverTime = rateOverTime - 3;
                 
                 isDoubleRoF = false;
             }
@@ -190,16 +192,6 @@ public class Script_Player_Controller : MonoBehaviour
 
     public void ChangeXP(int xpAmount)
     {
-        // if (xpAmount < 0)
-        // {
-        //     if (isInvincible)
-        //         return;
-
-        //     isInvincible = true;
-        //     invincibleTimer = timeInvincible;
-
-        //     Debug.Log ("INVINCIBLE");
-        // }
 
         currentXP = Mathf.Clamp(currentXP + xpAmount, 0, maxXP);
         //sonicBar.SetXP(currentXP);
@@ -246,25 +238,17 @@ public class Script_Player_Controller : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-        // if (collider.tag == "Hearts")
-        // {
-        //     if (hearts < maxHearts)
-        //     {
-        //         currentHearts = currentHearts + 1;
-
-        //         Debug.Log("HEARTS COLLECTED");
-
-        //         Destroy(collider.gameObject);
-        //     }
-        // }
 
         if (collider.tag == "Speed")
         {
+            LeanTween.moveLocal(speedTokenPop, new Vector3(-750f, 130f, 0f), 0.6f).setDelay(0.2f).setEase(LeanTweenType.easeInCirc);
+            LeanTween.moveLocal(speedTokenPop, new Vector3(-1160f, 130f, 0f), 0.6f).setDelay(3.2f).setEase(LeanTweenType.easeOutCirc);
+
             isSpeeding = true;
             
-            speedTimer = timePowered;
+            speedTimer = timeSpeed;
             
-            speed = speed * 2;
+            speed = speed + 3;
 
             Debug.Log("SPEED BOOST");
 
@@ -273,11 +257,14 @@ public class Script_Player_Controller : MonoBehaviour
 
         if (collider.tag == "DoubleTap")
         {
+            LeanTween.moveLocal(rofTokenPop, new Vector3(-730f, 60f, 0f), 0.6f).setDelay(0.2f).setEase(LeanTweenType.easeInCirc);
+            LeanTween.moveLocal(rofTokenPop, new Vector3(-1180f, 60f, 0f), 0.6f).setDelay(3.2f).setEase(LeanTweenType.easeOutCirc);
+
             isDoubleRoF = true;
             
-            doubleRoFTimer = timePowered;
+            doubleRoFTimer = timeDoubleRoF;
             
-            rateOverTime = rateOverTime * 2;
+            rateOverTime = rateOverTime + 3;
 
             Debug.Log("DOUBLE TAP");
 
@@ -286,6 +273,12 @@ public class Script_Player_Controller : MonoBehaviour
 
         if (collider.tag == "Invincible")
         {
+            if (isInvincible)
+            return;
+
+            LeanTween.moveLocal(invincibleTokenPop, new Vector3(-750f, -10f, 0f), 0.6f).setDelay(0.2f).setEase(LeanTweenType.easeInCirc);
+            LeanTween.moveLocal(invincibleTokenPop, new Vector3(-1160f, -10f, 0f), 0.6f).setDelay(3.2f).setEase(LeanTweenType.easeOutCirc);            
+
             isInvincible = true;
             
             invincibleTimer = timePowered;
@@ -297,6 +290,9 @@ public class Script_Player_Controller : MonoBehaviour
 
         if (collider.tag == "Ability")
         {
+            LeanTween.moveLocal(sonicTokenPop, new Vector3(-670f, -80f, 0f), 0.6f).setDelay(0.2f).setEase(LeanTweenType.easeInCirc);
+            LeanTween.moveLocal(sonicTokenPop, new Vector3(-1230f, -80f, 0f), 0.6f).setDelay(3.2f).setEase(LeanTweenType.easeOutCirc);
+
             currentXP = maxXP;
 
             sonicBar.SetXP(currentXP);
@@ -308,6 +304,9 @@ public class Script_Player_Controller : MonoBehaviour
 
         if (collider.tag == "Heal")
         {
+            LeanTween.moveLocal(healthTokenPop, new Vector3(-750f, 200f, 0f), 0.6f).setDelay(0.2f).setEase(LeanTweenType.easeInCirc);
+            LeanTween.moveLocal(healthTokenPop, new Vector3(-1160f, 200f, 0f), 0.6f).setDelay(3.2f).setEase(LeanTweenType.easeOutCirc);
+
             currentHearts = maxHearts;
 
             healthBar.SetMaxHealth(maxHearts);
@@ -335,7 +334,7 @@ public class Script_Player_Controller : MonoBehaviour
 
     public void ChangeROF() => rateOverTime = rateOverTime + 2;
 
-    public void ChangeArc() => arc = arc - 5;
+    public void ChangeArc() => arc = arc - 2;
 
     /*void CheckInput() {
         if (Input.GetKey(KeyCode.W)) {
