@@ -251,7 +251,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 67986668}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9c4f98f2fd274ad59a060c95b59caa2, type: 3}
+  m_Script: {fileID: 11500000, guid: f6477b1c4c90b1348afa4432854d52fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &75285395
@@ -16469,11 +16469,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1759845413174272551, guid: 3a8e9eedb37a64f0199fafe016ad7e09,
         type: 3}
-      propertyPath: InGameUI
-      value: 
-      objectReference: {fileID: 1683862116}
-    - target: {fileID: 1759845413174272551, guid: 3a8e9eedb37a64f0199fafe016ad7e09,
-        type: 3}
       propertyPath: sonicBar
       value: 
       objectReference: {fileID: 64732850}
@@ -16522,20 +16517,20 @@ PrefabInstance:
       propertyPath: invincibleTokenPop
       value: 
       objectReference: {fileID: 205046798}
+    - target: {fileID: 1759845413174272551, guid: 3a8e9eedb37a64f0199fafe016ad7e09,
+        type: 3}
+      propertyPath: leftStick.m_SingletonActionBindings.Array.data[0].m_Path
+      value: 2DVector(mode=2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759845413174272551, guid: 3a8e9eedb37a64f0199fafe016ad7e09,
+        type: 3}
+      propertyPath: rightStick.m_SingletonActionBindings.Array.data[0].m_Path
+      value: 2DVector(mode=2)
+      objectReference: {fileID: 0}
     - target: {fileID: 1759845413174272570, guid: 3a8e9eedb37a64f0199fafe016ad7e09,
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6353966656520719547, guid: 3a8e9eedb37a64f0199fafe016ad7e09,
-        type: 3}
-      propertyPath: ShapeModule.arc.value
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 6353966656520719547, guid: 3a8e9eedb37a64f0199fafe016ad7e09,
-        type: 3}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a8e9eedb37a64f0199fafe016ad7e09, type: 3}

@@ -225,6 +225,7 @@ public class Script_Player_Controller : MonoBehaviour
         } else {
             Shoot(false);
         }
+        Debug.Log(lookDirection);
     }
 
     void Shoot(bool isShooting) {

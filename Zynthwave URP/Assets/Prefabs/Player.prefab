@@ -120,7 +120,7 @@ MonoBehaviour:
   leftStick:
     m_Name: Left Stick
     m_Type: 0
-    m_ExpectedControlType: 
+    m_ExpectedControlType: Analog
     m_Id: 01f74968-0923-493f-a516-3c9becc0ebbb
     m_Processors: 
     m_Interactions: 
@@ -169,7 +169,7 @@ MonoBehaviour:
   rightStick:
     m_Name: Right Stick
     m_Type: 0
-    m_ExpectedControlType: 
+    m_ExpectedControlType: Analog
     m_Id: a0f5375e-2dae-401e-84af-3dd3317de808
     m_Processors: 
     m_Interactions: 
@@ -394,6 +394,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1759845413174272550}
     m_Modifications:
+    - target: {fileID: 421878847384324513, guid: 6ee907934ada6404a927a38f77383aed,
+        type: 3}
+      propertyPath: ShapeModule.arc.value
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 421878847384324513, guid: 6ee907934ada6404a927a38f77383aed,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3611365778062863080, guid: 6ee907934ada6404a927a38f77383aed,
         type: 3}
       propertyPath: m_RootOrder
