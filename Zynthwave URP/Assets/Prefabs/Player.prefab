@@ -113,7 +113,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1759845413174272570}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9c4f98f2fd274ad59a060c95b59caa2, type: 3}
+  m_Script: {fileID: 11500000, guid: f6477b1c4c90b1348afa4432854d52fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
@@ -121,20 +121,20 @@ MonoBehaviour:
     m_Name: Left Stick
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 57be7ae5-d067-4710-8851-14d9faf335fe
+    m_Id: 01f74968-0923-493f-a516-3c9becc0ebbb
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: Movement
-      m_Id: 35c1b1bc-d85c-4610-a17a-b7dcde4fdac7
-      m_Path: 2DVector(mode=2)
+      m_Id: a43d52ef-cc90-4a2f-b920-9d2216531110
+      m_Path: 2DVector
       m_Interactions: 
       m_Processors: 
       m_Groups: 
       m_Action: Left Stick
       m_Flags: 4
     - m_Name: up
-      m_Id: 03c15875-6862-4c26-8196-fb1679d3cf8b
+      m_Id: 50ef8b14-6e0c-455d-836b-408515988f55
       m_Path: <Gamepad>/leftStick/up
       m_Interactions: 
       m_Processors: 
@@ -142,7 +142,7 @@ MonoBehaviour:
       m_Action: Left Stick
       m_Flags: 8
     - m_Name: down
-      m_Id: fb552d2c-7673-461d-9163-8162ee68cde5
+      m_Id: 6f2e70ae-762b-41fa-9ba8-b34dfc77721a
       m_Path: <Gamepad>/leftStick/down
       m_Interactions: 
       m_Processors: 
@@ -150,7 +150,7 @@ MonoBehaviour:
       m_Action: Left Stick
       m_Flags: 8
     - m_Name: left
-      m_Id: facded0a-1f2d-4f47-b7d1-407a01fc9539
+      m_Id: 6ed506ac-dd28-4bb6-a5c0-2a04ac2b55fb
       m_Path: <Gamepad>/leftStick/left
       m_Interactions: 
       m_Processors: 
@@ -158,7 +158,7 @@ MonoBehaviour:
       m_Action: Left Stick
       m_Flags: 8
     - m_Name: right
-      m_Id: 3deacbef-4b72-4aca-8ed1-9ae2fc9b1999
+      m_Id: bac28ed8-4d4e-450d-a22b-9a16fee3ac1e
       m_Path: <Gamepad>/leftStick/right
       m_Interactions: 
       m_Processors: 
@@ -170,20 +170,20 @@ MonoBehaviour:
     m_Name: Right Stick
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: b280d501-a25f-4d92-9a5d-1407bc344a57
+    m_Id: a0f5375e-2dae-401e-84af-3dd3317de808
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
-    - m_Name: Looking / Shooting
-      m_Id: 630653d6-9468-45d0-9bd8-b4e5d8c838e5
-      m_Path: 2DVector(mode=2)
+    - m_Name: Looking/Shooting
+      m_Id: 37f73274-fe44-4bd6-ba6a-d4b3c7502281
+      m_Path: 2DVector
       m_Interactions: 
       m_Processors: 
       m_Groups: 
       m_Action: Right Stick
       m_Flags: 4
     - m_Name: up
-      m_Id: 64506aba-1de6-4f83-9141-ec38c8c90fb1
+      m_Id: ea073d16-cab0-46b1-bd45-3a8889cd55f6
       m_Path: <Gamepad>/rightStick/up
       m_Interactions: 
       m_Processors: 
@@ -191,7 +191,7 @@ MonoBehaviour:
       m_Action: Right Stick
       m_Flags: 8
     - m_Name: down
-      m_Id: 9f9eca2e-e352-4f80-8fb0-75386604ad11
+      m_Id: b6cbdd0a-1032-42e1-989d-b6abbcb2416c
       m_Path: <Gamepad>/rightStick/down
       m_Interactions: 
       m_Processors: 
@@ -199,7 +199,7 @@ MonoBehaviour:
       m_Action: Right Stick
       m_Flags: 8
     - m_Name: left
-      m_Id: 80732c28-a9f8-41d7-97f6-69955d5e57d8
+      m_Id: aa9a9c9c-15ba-49a8-aff1-7198fb609aad
       m_Path: <Gamepad>/rightStick/left
       m_Interactions: 
       m_Processors: 
@@ -207,7 +207,7 @@ MonoBehaviour:
       m_Action: Right Stick
       m_Flags: 8
     - m_Name: right
-      m_Id: a17fe03f-fef0-4b4c-b3fd-513b180f0223
+      m_Id: b0c86001-5707-4dd5-b555-c544f83342f9
       m_Path: <Gamepad>/rightStick/right
       m_Interactions: 
       m_Processors: 
@@ -219,12 +219,12 @@ MonoBehaviour:
     m_Name: Start Button
     m_Type: 1
     m_ExpectedControlType: Button
-    m_Id: a4f0d1bd-e5d8-4e6d-97a2-fd35578fbfdd
+    m_Id: 342e3218-ecc8-475e-a54b-841ec98cabdf
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: c53f5c31-bab7-4c4c-b090-0b6c9e44d7da
+      m_Id: f29c1ee4-50b7-43ba-9116-e90027687ab6
       m_Path: <Gamepad>/start
       m_Interactions: 
       m_Processors: 
@@ -236,12 +236,12 @@ MonoBehaviour:
     m_Name: Right Bumper
     m_Type: 1
     m_ExpectedControlType: Button
-    m_Id: 01907d1a-102f-4042-9b9b-5758a03a73af
+    m_Id: f3e4838c-16f7-4288-b81d-2a5977cbb3b4
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 415705a5-b7c5-4f0c-88ac-ab439050cfb6
+      m_Id: af765a6c-02e5-4f38-bf0d-b577cf79e62b
       m_Path: <Gamepad>/rightShoulder
       m_Interactions: 
       m_Processors: 
@@ -256,12 +256,22 @@ MonoBehaviour:
   maxHearts: 5
   currentHearts: 0
   timeInvincible: 2
-  currentXP: 100
+  timePowered: 10
+  timeSpeed: 10
+  speedTimer: 0
+  timeDoubleRoF: 10
+  doubleRoFTimer: 0
+  currentXP: 0
   maxXP: 100
   healthBar: {fileID: 0}
   sonicBar: {fileID: 0}
   gameoverPanel: {fileID: 0}
   pauseMenu: {fileID: 0}
+  healthTokenPop: {fileID: 0}
+  speedTokenPop: {fileID: 0}
+  rofTokenPop: {fileID: 0}
+  invincibleTokenPop: {fileID: 0}
+  sonicTokenPop: {fileID: 0}
   shopBackground: {fileID: 0}
 --- !u!54 &67986669
 Rigidbody:
