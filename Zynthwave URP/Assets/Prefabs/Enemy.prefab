@@ -120,7 +120,7 @@ MonoBehaviour:
   speed: 5
   enemydeathparticlesPrefab: {fileID: 6927076437262301292, guid: 62f3b05a9f45f43c18187ddfa011046e,
     type: 3}
-  dropRate: 0.8
+  dropRate: 0.01
   drops:
   - {fileID: 1328903979712405296, guid: 9b6b7684567cd4287b06f9e606430028, type: 3}
   - {fileID: 4169829933010303466, guid: 9aafd560bbedd4f979c1887d750128d9, type: 3}
