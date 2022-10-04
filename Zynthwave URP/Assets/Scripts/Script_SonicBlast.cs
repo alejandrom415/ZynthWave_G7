@@ -26,7 +26,7 @@ public class Script_SonicBlast : MonoBehaviour
         }
         collider.radius = 0;
         //blastVisual.transform.localScale = Vector3.zero;
-        LeanTween.scale(blastVisual, new Vector3(0f, 0f, 0f), 1.2f).setEase(LeanTweenType.easeOutElastic);
+        LeanTween.scale(blastVisual, new Vector3(0f, 0f, 0f), 1.5f).setEase(LeanTweenType.easeOutBounce);
         yield return null;
         gameObject.SetActive(false);
     }

@@ -7,10 +7,10 @@ using UnityEngine.UI;
 
 public class Script_Menu_Manager : MonoBehaviour
 {
-    public GameObject logoImg, groupImg, transitionPanel, splashscreenPanel, controllerImg, prodImg;                        // Background Elements
-    public GameObject mainMenu, settingsMenu, helpMenu, creditsMenu;                                                        // Menu Elements
-    public GameObject playBtn, settingsBtn, settingsBackBtn, helpBtn, helpBackBtn, creditsBtn, creditsBackBtn, quitBtn;     // Button Elements
-    public GameObject firstRow, secondRow, thirdRow;
+    public GameObject logoImg, groupImg, transitionPanel, splashscreenPanel, controllerImg, prodImg;                        
+    public GameObject mainMenu, settingsMenu, helpMenu, creditsMenu;                                                        
+    public GameObject playBtn, settingsBtn, settingsBackBtn, helpBtn, helpBackBtn, creditsBtn, creditsBackBtn, quitBtn;     
+    public GameObject firstRow, secondRow, thirdRow, killCon, upgrCon, survCon;
 
     public void MainMenuOn() => mainMenu.SetActive(true);
     public void MainMenuOff() => mainMenu.SetActive(false);
@@ -65,7 +65,6 @@ public class Script_Menu_Manager : MonoBehaviour
     {
         ButtonsOut();
         LeanTween.moveLocal(settingsBackBtn, new Vector3(-800f, -450f, 0f), 0.8f).setDelay(0.5f).setEase(LeanTweenType.easeOutElastic);
-        
         NoSelect();
         EventSystem.current.SetSelectedGameObject(settingsBackBtn);
     }
@@ -74,7 +73,6 @@ public class Script_Menu_Manager : MonoBehaviour
     {
         ButtonsIn();
         LeanTween.moveLocal(settingsBackBtn, new Vector3(-1110f, -450f, 0f), 0.3f).setEase(LeanTweenType.easeInCubic);
-        
         NoSelect();
         EventSystem.current.SetSelectedGameObject(settingsBtn);
     }
@@ -82,19 +80,31 @@ public class Script_Menu_Manager : MonoBehaviour
     public void OpenHelp()
     {
         ButtonsOut();
+        LeanTween.alpha(splashscreenPanel.GetComponent<RectTransform>(), 0.9f, 1f).setDelay(0.2f);
+        LeanTween.moveLocal(controllerImg, new Vector3(100f, 0f, 0f), 1.5f).setDelay(0.4f).setEase(LeanTweenType.easeOutCubic);
+        LeanTween.scale(killCon, new Vector3(1f, 1f, 1f), 1.5f).setDelay(0.4f).setEase(LeanTweenType.easeOutCubic);
+        LeanTween.scale(upgrCon, new Vector3(1f, 1f, 1f), 1.5f).setDelay(0.6f).setEase(LeanTweenType.easeOutCubic);
+        LeanTween.scale(survCon, new Vector3(1f, 1f, 1f), 1.5f).setDelay(0.8f).setEase(LeanTweenType.easeOutCubic).setOnComplete(HelpOpened);        
+    }
+
+    void HelpOpened()
+    {
         LeanTween.moveLocal(helpBackBtn, new Vector3(-800f, -450f, 0f), 0.8f).setDelay(0.5f).setEase(LeanTweenType.easeOutElastic);
-        LeanTween.moveLocal(controllerImg, new Vector3(0f, 0f, 0f), 0.8f).setDelay(0.5f).setEase(LeanTweenType.easeOutCubic);
-        
         NoSelect();
         EventSystem.current.SetSelectedGameObject(helpBackBtn);
     }
 
     public void CloseHelp()
     {
-        ButtonsIn();
+        LeanTween.alpha(splashscreenPanel.GetComponent<RectTransform>(), 0f, 1f).setDelay(0.2f);
+
         LeanTween.moveLocal(helpBackBtn, new Vector3(-1110f, -450f, 0f), 0.3f).setEase(LeanTweenType.easeInCubic);
         LeanTween.moveLocal(controllerImg, new Vector3(900f, 0f, 0f), 0.3f).setEase(LeanTweenType.easeInCubic);
-        
+
+        LeanTween.scale(killCon, new Vector3(0f, 1f, 1f), 0.6f).setEase(LeanTweenType.easeInCubic);
+        LeanTween.scale(upgrCon, new Vector3(0f, 1f, 1f), 0.4f).setEase(LeanTweenType.easeInCubic);
+        LeanTween.scale(survCon, new Vector3(0f, 1f, 1f), 0.2f).setEase(LeanTweenType.easeInCubic);
+        ButtonsIn();
         NoSelect();
         EventSystem.current.SetSelectedGameObject(helpBtn);
     }

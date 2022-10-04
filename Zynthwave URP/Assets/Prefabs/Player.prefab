@@ -469,7 +469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bedb8fe98c06bae44bf35c36b139f8de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blastRadius: 5
+  blastRadius: 4
   lerpDuration: 2
   blastVisual: {fileID: 6371861237534825936}
 --- !u!1001 &6770884490106504474
