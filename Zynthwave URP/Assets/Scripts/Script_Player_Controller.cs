@@ -53,7 +53,8 @@ public class Script_Player_Controller : MonoBehaviour
     public Script_Health_Bar healthBar;
     public Script_Sonic_Bar sonicBar;
     //public Script_GameOver gameoverScreen;
-    public GameObject gameoverPanel, pauseMenu, healthTokenPop, speedTokenPop, rofTokenPop, invincibleTokenPop, sonicTokenPop;
+    public GameObject gameoverPanel, gameoverImg, pauseMenu, healthTokenPop, speedTokenPop, rofTokenPop,
+    invincibleTokenPop, sonicTokenPop;
     //Script_GameUI gameUI;
     public Script_shopController shopBackground;
 
@@ -320,8 +321,9 @@ public class Script_Player_Controller : MonoBehaviour
 
     public void GameOver()
     {
-        Time.timeScale = 0;
         gameoverPanel.SetActive(true);
+        LeanTween.alpha(gameoverPanel.GetComponent<RectTransform>(), 1f, 0.3f).setDelay(0.5f);
+        LeanTween.alpha(gameoverImg.GetComponent<RectTransform>(), 1f, 0.8f).setDelay(0.8f);
     }
 
     public void ChangeHealthBuff()

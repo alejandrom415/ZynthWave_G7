@@ -59,8 +59,5 @@ public class Script_shopController : MonoBehaviour
         LeanTween.moveLocal(RofPop, new Vector3(1215f, -10f, 0f), 1f).setDelay(4.5f).setEase(LeanTweenType.easeOutCirc);
     }
 
-    void GoToNextWave()
-    {
-        spawner.StartNextWave();
-    }
+    void GoToNextWave() => spawner.StartNextWave();
 }

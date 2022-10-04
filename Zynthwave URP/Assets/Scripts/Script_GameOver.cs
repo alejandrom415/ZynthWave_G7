@@ -12,8 +12,16 @@ public class Script_GameOver : MonoBehaviour
 
     void Awake()
     {
+        LeanTween.moveLocal(mainmenuBtn, new Vector3(0f, -100f, 0f), 1f).setDelay(1.8f).setEase(LeanTweenType.easeInCubic);
+        LeanTween.moveLocal(quitBtn, new Vector3(0f, -300f, 0f), 1.2f).setDelay(1.8f).setEase(LeanTweenType.easeInCubic).setOnComplete(FreezeGame);
+
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(mainmenuBtn);
+    }
+
+    void FreezeGame()
+    {
+        Time.timeScale = 0;
     }
 
     public void ReturnToMainMenu()

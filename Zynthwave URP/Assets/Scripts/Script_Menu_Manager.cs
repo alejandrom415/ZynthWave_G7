@@ -12,8 +12,8 @@ public class Script_Menu_Manager : MonoBehaviour
     public GameObject playBtn, settingsBtn, settingsBackBtn, helpBtn, helpBackBtn, creditsBtn, creditsBackBtn, quitBtn;     
     public GameObject firstRow, secondRow, thirdRow, killCon, upgrCon, survCon;
 
-    public void MainMenuOn() => mainMenu.SetActive(true);
-    public void MainMenuOff() => mainMenu.SetActive(false);
+    public void DarkenScreen() => LeanTween.alpha(splashscreenPanel.GetComponent<RectTransform>(), 0.9f, 1f).setDelay(0.2f);
+    public void LightenScreen() => LeanTween.alpha(splashscreenPanel.GetComponent<RectTransform>(), 0f, 1f).setDelay(0.2f);
     public void NoSelect() => EventSystem.current.SetSelectedGameObject(null);
     public void ButtonsOut()
     {
@@ -71,8 +71,8 @@ public class Script_Menu_Manager : MonoBehaviour
 
     public void CloseSettings()
     {
-        ButtonsIn();
         LeanTween.moveLocal(settingsBackBtn, new Vector3(-1110f, -450f, 0f), 0.3f).setEase(LeanTweenType.easeInCubic);
+        ButtonsIn();
         NoSelect();
         EventSystem.current.SetSelectedGameObject(settingsBtn);
     }
@@ -80,7 +80,7 @@ public class Script_Menu_Manager : MonoBehaviour
     public void OpenHelp()
     {
         ButtonsOut();
-        LeanTween.alpha(splashscreenPanel.GetComponent<RectTransform>(), 0.9f, 1f).setDelay(0.2f);
+        DarkenScreen();
         LeanTween.moveLocal(controllerImg, new Vector3(100f, 0f, 0f), 1.5f).setDelay(0.4f).setEase(LeanTweenType.easeOutCubic);
         LeanTween.scale(killCon, new Vector3(1f, 1f, 1f), 1.5f).setDelay(0.4f).setEase(LeanTweenType.easeOutCubic);
         LeanTween.scale(upgrCon, new Vector3(1f, 1f, 1f), 1.5f).setDelay(0.6f).setEase(LeanTweenType.easeOutCubic);
@@ -96,11 +96,9 @@ public class Script_Menu_Manager : MonoBehaviour
 
     public void CloseHelp()
     {
-        LeanTween.alpha(splashscreenPanel.GetComponent<RectTransform>(), 0f, 1f).setDelay(0.2f);
-
+        LightenScreen();
         LeanTween.moveLocal(helpBackBtn, new Vector3(-1110f, -450f, 0f), 0.3f).setEase(LeanTweenType.easeInCubic);
         LeanTween.moveLocal(controllerImg, new Vector3(900f, 0f, 0f), 0.3f).setEase(LeanTweenType.easeInCubic);
-
         LeanTween.scale(killCon, new Vector3(0f, 1f, 1f), 0.6f).setEase(LeanTweenType.easeInCubic);
         LeanTween.scale(upgrCon, new Vector3(0f, 1f, 1f), 0.4f).setEase(LeanTweenType.easeInCubic);
         LeanTween.scale(survCon, new Vector3(0f, 1f, 1f), 0.2f).setEase(LeanTweenType.easeInCubic);
@@ -112,7 +110,7 @@ public class Script_Menu_Manager : MonoBehaviour
     public void OpenCredits()
     {
         ButtonsOut();
-        LeanTween.alpha(splashscreenPanel.GetComponent<RectTransform>(), 0.9f, 1f).setDelay(0.2f);
+        DarkenScreen();
         LeanTween.scale(firstRow, new Vector3(1f, 1f, 1f), 1.5f).setDelay(0.4f).setEase(LeanTweenType.easeOutCubic);
         LeanTween.scale(secondRow, new Vector3(1f, 1f, 1f), 1.5f).setDelay(0.6f).setEase(LeanTweenType.easeOutCubic);
         LeanTween.scale(thirdRow, new Vector3(1f, 1f, 1f), 1.5f).setDelay(0.8f).setEase(LeanTweenType.easeOutCubic).setOnComplete(CreditsOpened);
@@ -127,14 +125,11 @@ public class Script_Menu_Manager : MonoBehaviour
 
     public void CloseCredits()
     {
-        
-        LeanTween.alpha(splashscreenPanel.GetComponent<RectTransform>(), 0f, 1f).setDelay(0.2f);
+        LightenScreen();
         LeanTween.moveLocal(creditsBackBtn, new Vector3(-1110f, -450f, 0f), 0.3f).setEase(LeanTweenType.easeInCubic);
-
         LeanTween.scale(firstRow, new Vector3(1f, 0f, 1f), 0.6f).setEase(LeanTweenType.easeInCubic);
         LeanTween.scale(secondRow, new Vector3(1f, 0f, 1f), 0.4f).setEase(LeanTweenType.easeInCubic);
         LeanTween.scale(thirdRow, new Vector3(1f, 0f, 1f), 0.2f).setEase(LeanTweenType.easeInCubic);
-
         ButtonsIn();
         NoSelect();
         EventSystem.current.SetSelectedGameObject(creditsBtn);
