@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5313956810136566806}
   - component: {fileID: 7951669026665908444}
   - component: {fileID: -4355373801117350081}
+  - component: {fileID: -8881263335538779464}
   m_Layer: 0
   m_Name: DoubleTap
   m_TagString: DoubleTap
@@ -97,3 +98,15 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.30176187
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-8881263335538779464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8456349056062089481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57cb7fd6bad0c43a9b0bc898063ad64c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

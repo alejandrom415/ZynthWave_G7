@@ -93,7 +93,8 @@ public class Script_Enemy_Controller : MonoBehaviour
         roll = Random.Range(0f,1f);
         Debug.Log(roll);
         if (roll < dropRate) {
-            Instantiate(drops[Random.Range(0,drops.Count-1)], transform.position, transform.rotation);
+            //Instantiate(drops[Random.Range(0,drops.Count-1)], transform.position, transform.rotation);
+            Instantiate(drops[Random.Range(0,drops.Count-1)], rb.position + Vector3.up * 0.5f, Quaternion.identity);
         }
     }
 

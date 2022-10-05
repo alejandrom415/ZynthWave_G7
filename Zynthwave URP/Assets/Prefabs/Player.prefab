@@ -267,6 +267,7 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   sonicBar: {fileID: 0}
   gameoverPanel: {fileID: 0}
+  gameoverImg: {fileID: 0}
   pauseMenu: {fileID: 0}
   healthTokenPop: {fileID: 0}
   speedTokenPop: {fileID: 0}
